@@ -5,7 +5,7 @@ import SetPomodoro from "./components/SetPomodoro/SetPomodoro";
 import { SettingsContext } from "./context/SettingsContext";
 
 
-const App = () => {
+const Home = () => {
 
   const {
     pomodoro,
@@ -70,4 +70,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Home

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { SettingsContext } from '../context/SettingsContext'
+import { SettingsContext } from '../../context/SettingsContext'
 
 const SetPomodoro = () => {
     const [newTimer, setNewTimer] = useState({

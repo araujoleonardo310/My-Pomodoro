@@ -1,3 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --baground: #1e2140;
+  --baground-dark: #151932;
+  --color-primary: #fff;
+  --color-font: #d7e0fe;
+  --color-one: #f87170;
+  --color-two: #7ef870;
+  --color-three: #F870a4;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -36,11 +54,25 @@ code {
   padding:.3rem .3rem;
   background-color: #0C0E1B;
   border-radius: 1.5rem;
+  margin: 1rem;
 }
 
-.active-label {
-  color: #0C0E1B;
-  background-color: #FE6F6B;
+.active-label-work {
+  color: var(--color-primary);
+  font-weight: bold;
+  background: var(--color-one);
+}
+
+.active-label-short {
+  color: var(--color-primary);
+  font-weight: bold;
+  background: var(--color-two);
+}
+
+.active-label-long {
+  color: var(--color-primary);
+  font-weight: bold;
+  background: var(--color-three);
 }
 
 .timer-container {
@@ -82,6 +114,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.493) 0px 5px 15px;
+}
+
 .button-wrapper button.activve {
   color: #0C0E1B;
   background-color: #C9CCEA;
@@ -94,14 +130,25 @@ button {
   margin: 1.5rem;
 }
 .input-wrapper input {
-  height: 55px;
-  width: 55px;
-  padding: 2rem;
-  background-color: #0C0E1B;
-  color:#C9CCEA;
+  height: 100px;
+  width: 100px;
+  padding: 1rem;
+  color: #ffffff;
   border: none;
   border-radius: 50%;
   margin-right: 0.3rem;
   text-align: center;
   font-size: 14pt;
+}
+
+.input-wrapper input[name="work"]{
+  background: var(--color-one);
+}
+
+.input-wrapper input[name="shortBreak"]{
+  background: var(--color-two);
+}
+
+.input-wrapper input[name="longBreak"]{
+  background: var(--color-three);
 }
