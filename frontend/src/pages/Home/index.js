@@ -1,12 +1,11 @@
+import './style.css'
 import { useEffect, useContext } from "react";
 import Button from "../../components/Button";
 import CountdownAnimation from "../../components/CountdownAnimation"
 import SetPomodoro from "../../components/SetPomodoro";
 import { SettingsContext } from "../../context";
 
-
 const Home = () => {
-
   const {
     pomodoro,
     executing,
@@ -18,7 +17,7 @@ const Home = () => {
     setCurrentTimer,
     SettingsBtn } = useContext(SettingsContext)
 
-    useEffect(() => {updateExecute(executing)},[executing, startAnimate])
+    useEffect(() => {updateExecute(executing)},[executing, startAnimate, updateExecute])
 
   return (
     <div className="container">
@@ -45,11 +44,11 @@ const Home = () => {
             <Button 
               title="Pausa Longa" 
               activeClass={executing.active === 'long' ? 'active-label-long' : undefined} 
-              _callback={() => setCurrentTimer('long')} 
+              _callback={() => setCurrentTimer('long')}              
             />
           </li>
         </ul>
-        <Button title="Settings" _callback={SettingsBtn} />
+        <Button title="Settings" _callback={SettingsBtn} className="settings-btn"/>
         <div className="timer-container">
           <div className="time-wrapper">
               <CountdownAnimation
