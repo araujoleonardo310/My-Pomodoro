@@ -1,8 +1,8 @@
 import { useEffect, useContext } from "react";
-import Button from "./components/Button/Button";
-import CountdownAnimation from "./components/CountdownAnimation/CountdownAnimation"
-import SetPomodoro from "./components/SetPomodoro/SetPomodoro";
-import { SettingsContext } from "./context/SettingsContext";
+import Button from "../../components/Button";
+import CountdownAnimation from "../../components/CountdownAnimation"
+import SetPomodoro from "../../components/SetPomodoro";
+import { SettingsContext } from "../../context";
 
 
 const Home = () => {
