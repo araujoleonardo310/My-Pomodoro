@@ -1,87 +1,87 @@
-import { createContext, useState} from 'react'
+import { createContext, useState } from 'react';
 
-export const SettingsContext = createContext()
+export const SettingsContext = createContext();
 
-function SettingsContextProvider(props){
-    const [pomodoro, setPomodoro] = useState(0);
-    const [executing, setExecuting] = useState({});
-    const [startAnimate, setStartAnimate] = useState(false);
-    const [color, setColor] = useState("#fff")
+function SettingsContextProvider(props) {
+  const [pomodoro, setPomodoro] = useState(0);
+  const [executing, setExecuting] = useState({});
+  const [startAnimate, setStartAnimate] = useState(false);
+  const [color, setColor] = useState('#fff');
 
+  function startTimer() {
+    setStartAnimate(true);
+  }
 
-    function startTimer() {
-        setStartAnimate(true)
+  function pauseTimer() {
+    setStartAnimate(false);
+  }
+
+  function stopTimer() {
+    setStartAnimate(false);
+  }
+
+  const SettingsBtn = () => {
+    setExecuting({});
+    setPomodoro(0);
+  };
+
+  function setCurrentTimer(active_state) {
+    updateExecute({
+      ...executing,
+      active: active_state,
+    });
+    setTimerTime(executing);
+  }
+
+  const updateExecute = (updatedSettings) => {
+    setExecuting(updatedSettings);
+    setTimerTime(updatedSettings);
+  };
+
+  const setTimerTime = (evalute) => {
+    switch (evalute.active) {
+      case 'work':
+        setPomodoro(evalute.work);
+        break;
+      case 'short':
+        setPomodoro(evalute.short);
+        break;
+      case 'long':
+        setPomodoro(evalute.long);
+        break;
+
+      default:
+        setPomodoro(0);
+        break;
     }
+  };
 
-    function pauseTimer() {
-        setStartAnimate(false)
-    }
+  const children = ({ remainingTime }) => {
+    const minutes = Math.floor(remainingTime / 60);
+    const seconds = remainingTime % 60;
 
-    function stopTimer() {
-        setStartAnimate(false)
-    }
+    return `${minutes}:${seconds}`;
+  };
 
-    const SettingsBtn = () => {
-        setExecuting({})
-        setPomodoro(0)
-    }
-
-    function setCurrentTimer(active_state) {
-        updateExecute({
-            ...executing,
-            active: active_state
-        })
-        setTimerTime(executing)
-    }
-
-    const updateExecute = updatedSettings => {
-        setExecuting(updatedSettings)
-        setTimerTime(updatedSettings)
-    }
-
-    const setTimerTime = evalute => {
-        switch (evalute.active) {
-            case 'work':
-                setPomodoro(evalute.work)                
-                break;
-            case 'short':
-                setPomodoro(evalute.short)                
-                break;
-            case 'long':
-                setPomodoro(evalute.long)                
-                break;
-        
-            default:
-                setPomodoro(0)
-                break;
-        }
-    }
-
-    const children = ({ remainingTime }) => {
-        const minutes = Math.floor(remainingTime / 60)
-        const seconds = remainingTime % 60
-
-        return `${minutes}:${seconds}`
-    }
-
-    return (
-        <SettingsContext.Provider 
-        value={{
-            color,
-            stopTimer, 
-            updateExecute,
-            pomodoro,
-            executing,
-            startAnimate,
-            startTimer,
-            pauseTimer,
-            SettingsBtn,
-            setCurrentTimer,
-            children
-            }}>
-           {props.children} 
-        </SettingsContext.Provider>
-    )
+  return (
+    <SettingsContext.Provider
+      value={{
+        color,
+        stopTimer,
+        updateExecute,
+        pomodoro,
+        executing,
+        startAnimate,
+        startTimer,
+        pauseTimer,
+        SettingsBtn,
+        setCurrentTimer,
+        children,
+      }}
+    >
+      {props.children}
+    </SettingsContext.Provider>
+  );
 }
 
-export default SettingsContextProvider
+export default SettingsContextProvider;

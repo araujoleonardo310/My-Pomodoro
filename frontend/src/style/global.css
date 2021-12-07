@@ -4,17 +4,15 @@
   box-sizing: border-box;
 }
 
-
-:root {   
-  --baground: #0C0E1B;
+:root {
+  --baground: #0c0e1b;
   --baground-dark: #151932;
   --color-primary: #fff;
   --color-font: #d7e0fe;
   --color-one: #f87170;
   --color-two: #7ef870;
-  --color-three: #F870a4;
+  --color-three: #f870a4;
 }
-
 
 body {
   margin: 0;
@@ -29,6 +27,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-
