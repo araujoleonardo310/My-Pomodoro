@@ -4,8 +4,10 @@ export const SettingsContext = createContext()
 
 function SettingsContextProvider(props){
     const [pomodoro, setPomodoro] = useState(0);
-    const [executing, setExecuting] = useState({})
-    const [startAnimate, setStartAnimate] = useState(false)
+    const [executing, setExecuting] = useState({});
+    const [startAnimate, setStartAnimate] = useState(false);
+    const [color, setColor] = useState("#fff")
+
 
     function startTimer() {
         setStartAnimate(true)
@@ -65,6 +67,7 @@ function SettingsContextProvider(props){
     return (
         <SettingsContext.Provider 
         value={{
+            color,
             stopTimer, 
             updateExecute,
             pomodoro,

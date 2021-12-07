@@ -1,12 +1,13 @@
-import './style.css'
 import { useEffect, useContext } from "react";
 import Button from "../../components/Button";
 import CountdownAnimation from "../../components/CountdownAnimation"
 import SetPomodoro from "../../components/SetPomodoro";
 import { SettingsContext } from "../../context";
+import './style.css'
 
 const Home = () => {
   const {
+    color,
     pomodoro,
     executing,
     startAnimate,
@@ -55,6 +56,7 @@ const Home = () => {
                 key={pomodoro} 
                 timer={pomodoro} 
                 animate={startAnimate}
+                color={color}
               >
                 {children}
               </CountdownAnimation>
