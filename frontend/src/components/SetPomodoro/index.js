@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import './style.css'
 import { SettingsContext } from '../../context';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SetPomodoro = () => {
   const [newTimer, setNewTimer] = useState({
@@ -11,9 +12,7 @@ const SetPomodoro = () => {
     active: 'work',
   });
 
-  const [color, setColor] = useState('#fff');
-
-  const { updateExecute } = useContext(SettingsContext);
+  const { updateExecute, color, setColor } = useContext(SettingsContext);
 
   const handleChange = (input) => {
     const { name, value } = input.target;
@@ -44,10 +43,21 @@ const SetPomodoro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateExecute(newTimer, color);
+    console.log(newTimer)
+    if(newTimer.work != 0) {
+      updateExecute(newTimer, color);
+    } else {
+      toast.info("Você precisa adicionar um valor em contagem!")
+    }
   };
 
+  const cor = (value) => {
+    setColor(`${value}`);
+
+  }
+
   return (
+    <>
     <Modal
       show={true}
       children={
@@ -97,21 +107,20 @@ const SetPomodoro = () => {
               </label>
               <div className="list-colors">
                 <input
-                  onClick={() => {
-                    setColor('#f87170');
-                  }}
+                 onClick={() => {
+                  cor("#f87170")
+                }}
                   className="option1"
                 />
                 <input
                   onClick={() => {
-                    setColor('#f87170');
+                    cor("#eb34d8")
                   }}
                   className="option2"
                 />
                 <input
                   onClick={() => {
-                    setColor('#f870a4');
-                  }}
+                    cor("#07f5d5")}}
                   className="option3"
                 />
               </div>
@@ -122,7 +131,21 @@ const SetPomodoro = () => {
           </form>
         </div>
       }
-    ></Modal>
+    >
+
+    </Modal>
+    <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+    />
+    </>
   );
 };
 

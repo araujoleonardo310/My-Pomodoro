@@ -69,19 +69,19 @@ button {
 .active-label-work {
   color: var(--color-primary);
   font-weight: bold;
-  background: var(--color-one);
+  background: #e28743;
 }
 
 .active-label-short {
   color: var(--color-primary);
   font-weight: bold;
-  background: var(--color-two);
+  background: #09649d;
 }
 
 .active-label-long {
   color: var(--color-primary);
   font-weight: bold;
-  background: var(--color-three);
+  background: #8a79ed;
 }
 
 .button-wrapper button.activve {
