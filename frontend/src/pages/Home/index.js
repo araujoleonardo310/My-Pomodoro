@@ -12,10 +12,8 @@ const Home = () => {
     executing,
     startAnimate,
     children,
-
     startTimer,
     pauseTimer,
-
     updateExecute,
     setCurrentTimer,
     SettingsBtn,

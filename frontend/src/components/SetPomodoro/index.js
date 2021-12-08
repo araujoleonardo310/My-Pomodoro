@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { SettingsContext } from '../../context';
-import './style.css';
 
 const SetPomodoro = () => {
   const [newTimer, setNewTimer] = useState({
