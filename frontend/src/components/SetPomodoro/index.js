@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import './style.css'
 import { SettingsContext } from '../../context';
 
 const SetPomodoro = () => {
@@ -99,19 +100,19 @@ const SetPomodoro = () => {
                   onClick={() => {
                     setColor('#f87170');
                   }}
-                  className="color-one"
+                  className="option1"
                 />
                 <input
                   onClick={() => {
                     setColor('#f87170');
                   }}
-                  className="color-two"
+                  className="option2"
                 />
                 <input
                   onClick={() => {
                     setColor('#f870a4');
                   }}
-                  className="color-three"
+                  className="option3"
                 />
               </div>
             </div>
