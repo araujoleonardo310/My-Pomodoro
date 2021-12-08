@@ -1,9 +1,10 @@
 import { useEffect, useContext } from 'react';
-import Button from '../../components/Button';
-import CountdownAnimation from '../../components/CountdownAnimation';
-import SetPomodoro from '../../components/SetPomodoro';
 import { SettingsContext } from '../../context';
+
 import './style.css';
+import Button from '../../components/Button';
+import SetPomodoro from '../../components/SetPomodoro';
+import CountdownAnimation from '../../components/CountdownAnimation';
 
 const Home = () => {
   const {

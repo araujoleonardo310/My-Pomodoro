@@ -1,7 +1,9 @@
 import React from 'react';
-import LottieFile from '../../components/LottieFile';
-import "./style.css"
+
 import {MdTimer} from "react-icons/md"
+
+import "./style.css"
+import LottieFile from '../../components/LottieFile';
 
 
 const Login = () => {

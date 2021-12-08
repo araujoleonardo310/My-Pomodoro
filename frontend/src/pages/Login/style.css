@@ -1,0 +1,22 @@
+.container-login {
+  width: 100vw;
+  height: 100vh;
+  background: var(--baground-dark);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.container-social {
+  width: 50%;
+  height: 50vh;
+
+  margin-right: 1rem;
+
+  border: none;
+  border-radius: 10px;
+  
+  background: #fff;
+  box-shadow: rgba(255, 253, 253, 0.35) 0px 5px 15px;
+
+}
