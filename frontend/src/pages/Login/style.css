@@ -1,22 +1,90 @@
 .container-login {
   width: 100vw;
   height: 100vh;
-  background: var(--baground-dark);
+
   display: flex;
-  justify-content: start;
   align-items: center;
+  justify-content: start;
+
+  background: var(--background-dark);
 }
 
-.container-social {
-  width: 50%;
-  height: 50vh;
+.title {
+  width: 28rem;
 
-  margin-right: 1rem;
+  padding-bottom: 1rem;
+
+  font-style: italic;
+
+  border-bottom: 1px solid;
+}
+
+.wrappers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrappers input[type='password'] {
+  margin: 1rem 0;
+}
+
+.container-form {
+  width: 35vw;
+  height: 63vh;
+
+  margin-left: 5rem;
+
+  padding: 2rem;
 
   border: none;
   border-radius: 10px;
-  
-  background: #fff;
-  box-shadow: rgba(255, 253, 253, 0.35) 0px 5px 15px;
 
+  background: #fafafa;
+  box-shadow: rgba(255, 253, 253, 0.35) 0px 5px 15px;
+}
+
+.container-form .form {
+  padding: 3rem;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.btns-socials {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container-form .btn {
+  width: 25rem;
+
+  margin-bottom: 0.2rem;
+
+  padding: 0.5rem;
+
+  border: 1px solid;
+
+  font-weight: bold;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.github {
+  color: #fff;
+  background: #0e0e0e;
+}
+
+.facebook {
+  color: #fff;
+  background: #4867aa;
+}
+
+.google {
+  color: #0e0e0e;
+  background: #fff;
 }

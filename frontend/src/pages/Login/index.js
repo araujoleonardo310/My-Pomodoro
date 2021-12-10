@@ -1,30 +1,31 @@
 import React from 'react';
 
-import {MdTimer} from "react-icons/md"
-
-import "./style.css"
+import './style.css';
 import LottieFile from '../../components/LottieFile';
-
 
 const Login = () => {
   return (
     <div className="container-login">
       <div className="container-animation">
-        <LottieFile name="workTime"/>
+        {/* <LottieFile name="workTime" /> */}
       </div>
-      <div className="container-social">
+      <div className="container-form">
         <div className="title">
-          <p><MdTimer /></p>
           <h2>Melhore sua produtividade</h2>
         </div>
-        <form>
-          <input type="text" />
-          <input type="password" />
-          <button>Login</button>
-          <p>OU</p>
-          <button>GitHub</button>
-          <button>Facebook</button>
-          <button>Google</button>
+        <form className="form">
+          <section className='inputs-wrappers'>
+            <div className='wrappers'>
+              <input type="text" />
+              <input type="password" />
+            </div>
+            <button className='btn login'>Login</button>
+          </section>
+          <section className='btns-socials'>
+            <button className='btn github'>GitHub</button>
+            <button className='btn facebook'>Facebook</button>
+            <button className='btn google'>Google</button>
+          </section>
         </form>
       </div>
     </div>
