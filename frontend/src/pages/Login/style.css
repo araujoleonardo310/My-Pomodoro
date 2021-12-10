@@ -1,22 +1,39 @@
 .container-login {
   width: 100vw;
   height: 100vh;
-
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: start;
-
   background: var(--background-dark);
+}
+
+.lottieAnimation {
+  background: var(--color-primary);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .title {
   width: 28rem;
+  display: flex;
+  margin-left: 1rem;
+  border-bottom: 1px solid #c5c5c5;
 
-  padding-bottom: 1rem;
+}
 
+.title p {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
   font-style: italic;
+  font-weight: 500;
+  color: #263238;
+}
 
-  border-bottom: 1px solid;
+.moreTime {
+  font-size: 2rem;
+  color: #3fa92b;
 }
 
 .wrappers {
@@ -25,13 +42,28 @@
   justify-content: center;
 }
 
-.wrappers input[type='password'] {
-  margin: 1rem 0;
+.email,
+.password {
+  border: 1px solid #d9d9d9;
+  border-radius: 0.2rem;
+  height: 5vh;
+  margin: 0.2rem 0;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #455a64;
+}
+
+input:focus {
+  outline: none;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px #719ECE;
 }
 
 .container-form {
   width: 35vw;
   height: 63vh;
+  margin-right: 5rem;
 
   margin-left: 5rem;
 
@@ -45,7 +77,7 @@
 }
 
 .container-form .form {
-  padding: 3rem;
+  padding: 2rem 3rem;
 
   text-align: center;
 
@@ -67,11 +99,26 @@
 
   padding: 0.5rem;
 
-  border: 1px solid;
-
   font-weight: bold;
 
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container-form .btn:hover {
+  color: #fafafa;
+  background: rgb(94, 79, 79);
+  transition: 0.3ms;
+}
+
+
+.login {
+  color: var(--color-primary);
+  background: #17d350;
 }
 
 .github {
@@ -85,6 +132,20 @@
 }
 
 .google {
-  color: #0e0e0e;
-  background: #fff;
+  color: var(--background-dark);
+  background: rgb(241, 241, 241);
+}
+
+.google:hover {
+  color: #665353;
+}
+
+.logo {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo span {
+  width: 50%;
 }
