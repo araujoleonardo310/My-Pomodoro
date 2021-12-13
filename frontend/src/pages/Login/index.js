@@ -1,20 +1,17 @@
+/* eslint-disable no-console */
 import React from 'react';
 
 import './style.css';
 import LottieFile from '../../components/LottieFile';
 import { BsGithub } from 'react-icons/bs';
 import { FaFacebookSquare } from 'react-icons/fa';
-import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineMoreTime } from 'react-icons/md';
-import { facebookProvider } from "../../config/Authenticon";
-import { githubProvider } from "../../config/Authenticon";
-import { googleProvider } from "../../config/Authenticon";
-
+import { facebookProvider } from '../../config/AuthMethods';
+import socialMediaAuth from '../../service';
 
 const Login = () => {
-  const handleOnclick = async () => {
-    const res = await SocialMediaAuth(provider);
-    // eslint-disable-next-line no-console
+  const handleOnClick = async () => {
+    const res = await socialMediaAuth(provider);
     console.log(res);
   };
   return (
@@ -34,10 +31,7 @@ const Login = () => {
               <button className="btn login">Login</button>
             </section>
             <section className="btns-socials">
-              <button
-                className="btn github"
-                onClick={() => handleOnclick(githubProvider)}
-              >
+              <button className="btn github">
                 <span className="logo">
                   <span>
                     <BsGithub />
@@ -47,7 +41,7 @@ const Login = () => {
               </button>
               <button
                 className="btn facebook"
-                onClick={() => handleOnlick(facebookProvider)}
+                onClick={() => handleOnClick(facebookProvider)}
               >
                 <span className="logo">
                   <span>
@@ -56,10 +50,7 @@ const Login = () => {
                   <span>Facebook</span>
                 </span>
               </button>
-              <button
-                className="btn google"
-                onClick={() => handleOnclick(googleProvider)}
-              >
+              <button className="btn google">
                 <span className="logo">
                   <span>
                     <FcGoogle />
