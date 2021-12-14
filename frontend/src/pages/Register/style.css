@@ -1,0 +1,156 @@
+.container-login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-dark);
+}
+
+.lottieAnimation {
+  background: var(--color-primary);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  width: 28rem;
+  display: flex;
+  margin-left: 1rem;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.title p {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #263238;
+}
+
+.ClockIcon {
+  font-size: 2rem;
+  color: #3fa92b;
+  position: relative;
+  bottom: 15px;
+}
+
+.wrappers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name, .email,
+.password {
+  border: 1px solid #d9d9d9;
+  border-radius: 0.2rem;
+  height: 5vh;
+  margin: 0.2rem 0;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #455a64;
+}
+
+input:focus {
+  outline: none;
+  border-color: #719ece;
+  box-shadow: 0 0 10px #719ece;
+}
+
+.RegistrationAndGetpassword {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-form {
+  width: 35vw;
+  height: 63vh;
+  margin-right: 5rem;
+
+  margin-left: 5rem;
+
+  padding: 2rem;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #fafafa;
+  box-shadow: rgba(255, 253, 253, 0.35) 0px 5px 15px;
+}
+
+.container-form .form {
+  padding: 2rem 3rem;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.btns-socials {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container-form .btn {
+  width: 25rem;
+
+  margin-bottom: 0.2rem;
+
+  padding: 0.5rem;
+
+  font-weight: bold;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-form .btn:hover {
+  color: #fafafa;
+  background: rgb(94, 79, 79);
+  transition: 0.3ms;
+}
+
+.login {
+  color: var(--color-primary);
+  background: #17d350;
+}
+
+.github {
+  color: #fff;
+  background: #0e0e0e;
+}
+
+.facebook {
+  color: #fff;
+  background: #4867aa;
+}
+
+.google {
+  color: var(--background-dark);
+  background: rgb(241, 241, 241);
+}
+
+.google:hover {
+  color: #665353;
+}
+
+.icon {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon span {
+  width: 50%;
+}

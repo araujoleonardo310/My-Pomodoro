@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/global.css';
-import 'react-toastify/dist/ReactToastify.css';
+import App from './app';
+
 import SettingsContextProvider from './context';
-import Routes from './routes';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.render(
   <SettingsContextProvider>
-    <Routes />
+    <App />
   </SettingsContextProvider>,
   document.getElementById('root'),
 );
