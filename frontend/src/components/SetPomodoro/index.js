@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import './style.css';
 import { SettingsContext } from '../../context';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -46,7 +45,7 @@ const SetPomodoro = () => {
     if (newTimer.work != 0) {
       updateExecute(newTimer, color);
     } else {
-      toast.info('Você precisa adicionar um valor em contagem!');
+      toast.info('Você precisa adicionar tempo para contagem!');
     }
   };
 

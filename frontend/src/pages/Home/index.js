@@ -5,6 +5,7 @@ import './style.css';
 import Button from '../../components/Button';
 import SetPomodoro from '../../components/SetPomodoro';
 import CountdownAnimation from '../../components/CountdownAnimation';
+import LogOut from '../../components/LogOut';
 
 const Home = () => {
   const {
@@ -25,17 +26,17 @@ const Home = () => {
   }, [executing, startAnimate, updateExecute]);
 
   return (
-    <div className="container">
+    <div className="container__home">
       <h1>My Pomodoro</h1>
       <small>Sendo produtivo na contagem certa!⏱️</small>
       {pomodoro !== 0 ? (
         <>
-          <ul className="labels">
+          <ul className="TimesOfPomodoro">
             <li>
               <Button
                 title="Preferência"
                 activeClass={
-                  executing.active === 'work' ? 'active-label-work' : undefined
+                  executing.active === 'work' ? 'btn-active-work' : undefined
                 }
                 _callback={() => setCurrentTimer('work')}
               />
@@ -44,9 +45,7 @@ const Home = () => {
               <Button
                 title="Pausa Curta"
                 activeClass={
-                  executing.active === 'short'
-                    ? 'active-label-short'
-                    : undefined
+                  executing.active === 'short' ? 'btn-active-short' : undefined
                 }
                 _callback={() => setCurrentTimer('short')}
               />
@@ -55,7 +54,7 @@ const Home = () => {
               <Button
                 title="Pausa Longa"
                 activeClass={
-                  executing.active === 'long' ? 'active-label-long' : undefined
+                  executing.active === 'long' ? 'btn-active-long' : undefined
                 }
                 _callback={() => setCurrentTimer('long')}
               />
@@ -66,8 +65,8 @@ const Home = () => {
             _callback={SettingsBtn}
             className="settings-btn"
           />
-          <div className="timer-container">
-            <div className="time-wrapper">
+          <div className="container__time">
+            <div className="PomodoroStart">
               <CountdownAnimation
                 key={pomodoro}
                 timer={pomodoro}
@@ -78,7 +77,7 @@ const Home = () => {
               </CountdownAnimation>
             </div>
           </div>
-          <div className="button-wrapper">
+          <div className="btns_controls">
             <Button
               title="Iniciar"
               activeClass={!startAnimate ? 'active' : undefined}
@@ -94,6 +93,9 @@ const Home = () => {
       ) : (
         <SetPomodoro />
       )}
+      <div>
+        <LogOut />
+      </div>
     </div>
   );
 };

@@ -18,8 +18,8 @@ const db = app.firestore();
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-const signInWithGoogle = async () => {
-  event.preventDefault()
+const signInWithGoogle = async (event) => {
+  event.preventDefault();
   try {
     const res = await auth.signInWithPopup(googleProvider);
 
@@ -31,7 +31,6 @@ const signInWithGoogle = async () => {
       .get();
 
     if (query.docs.length === 0) {
-
       await db.collection('users').add({
         uid: user.uid,
         name: user.displayName,

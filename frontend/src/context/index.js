@@ -6,7 +6,7 @@ function SettingsContextProvider(props) {
   const [pomodoro, setPomodoro] = useState(0);
   const [executing, setExecuting] = useState({});
   const [startAnimate, setStartAnimate] = useState(false);
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('#fff');
 
   function startTimer() {
     setStartAnimate(true);
