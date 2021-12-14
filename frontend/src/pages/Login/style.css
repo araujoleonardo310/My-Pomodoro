@@ -20,7 +20,6 @@
   display: flex;
   margin-left: 1rem;
   border-bottom: 1px solid #c5c5c5;
-
 }
 
 .title p {
@@ -31,9 +30,11 @@
   color: #263238;
 }
 
-.moreTime {
+.ClockIcon {
   font-size: 2rem;
   color: #3fa92b;
+  position: relative;
+  bottom: 15px;
 }
 
 .wrappers {
@@ -56,8 +57,14 @@
 
 input:focus {
   outline: none;
-  border-color: #719ECE;
-  box-shadow: 0 0 10px #719ECE;
+  border-color: #719ece;
+  box-shadow: 0 0 10px #719ece;
+}
+
+.RegistrationAndGetpassword {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .container-form {
@@ -106,7 +113,6 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .container-form .btn:hover {
@@ -114,7 +120,6 @@ input:focus {
   background: rgb(94, 79, 79);
   transition: 0.3ms;
 }
-
 
 .login {
   color: var(--color-primary);
@@ -140,12 +145,12 @@ input:focus {
   color: #665353;
 }
 
-.logo {
+.icon {
   width: 25%;
   display: flex;
   justify-content: space-between;
 }
 
-.logo span {
+.icon span {
   width: 50%;
 }

@@ -1,7 +1,7 @@
-import React from "react";
-import Lottie from "react-lottie";
+import React from 'react';
+import Lottie from 'react-lottie';
 
-const LottieFile = ({ name }) => {
+const LottieAnimation = ({ name }) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -15,4 +15,4 @@ const LottieFile = ({ name }) => {
   );
 };
 
-export default LottieFile;
+export default LottieAnimation;

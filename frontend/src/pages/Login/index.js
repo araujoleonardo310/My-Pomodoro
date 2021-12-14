@@ -1,25 +1,26 @@
 /* eslint-disable no-console */
-import React from 'react';
-
+import React, { useState } from 'react';
 import './style.css';
-import LottieFile from '../../components/LottieFile';
+
+import AnimationLottie from '../../components/LottieFile';
+
 import { BsGithub } from 'react-icons/bs';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { MdOutlineMoreTime } from 'react-icons/md';
-import { facebookProvider } from '../../config/AuthMethods';
-import socialMediaAuth from '../../service';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
-  const handleOnClick = async () => {
-    const res = await socialMediaAuth(provider);
-    console.log(res);
-  };
+  const [GoogleIcon] = useState(FcGoogle);
+  const [GithubIcon] = useState(BsGithub);
+  const [FaceBookIcon] = useState(FaFacebookSquare);
+  const [ClockIcon] = useState(MdOutlineMoreTime);
+
   return (
     <div className="container-login">
       <div className="containers">
         <div className="container-form">
           <div className="title">
-            <MdOutlineMoreTime className="moreTime" />
+            <sapn className="ClockIcon">{ClockIcon}</sapn>
             <p>Melhore sua produtividade</p>
           </div>
           <form className="form">
@@ -27,34 +28,28 @@ const Login = () => {
               <div className="wrappers">
                 <input type="email" className="email" />
                 <input type="password" className="password" />
+                <button className="btn login">Login</button>
               </div>
-              <button className="btn login">Login</button>
+              <div className='Registration'>
+              <a>Faça seu registro!</a>
+              </div>
             </section>
             <section className="btns-socials">
               <button className="btn github">
-                <span className="logo">
-                  <span>
-                    <BsGithub />
-                  </span>
+                <span className="icon">
+                  <span>{GithubIcon}</span>
                   <span>GitHub</span>
                 </span>
               </button>
-              <button
-                className="btn facebook"
-                onClick={() => handleOnClick(facebookProvider)}
-              >
-                <span className="logo">
-                  <span>
-                    <FaFacebookSquare />
-                  </span>
+              <button className="btn facebook">
+                <span className="icon">
+                  <span>{FaceBookIcon}</span>
                   <span>Facebook</span>
                 </span>
               </button>
               <button className="btn google">
-                <span className="logo">
-                  <span>
-                    <FcGoogle />
-                  </span>
+                <span className="icon">
+                  <span>{GoogleIcon}</span>
                   <span>Google</span>
                 </span>
               </button>
@@ -63,7 +58,7 @@ const Login = () => {
         </div>
       </div>
       <div className="containers lottieAnimation">
-        <LottieFile name="workTime" />
+        <AnimationLottie name="workTime" />
         <p></p>
       </div>
     </div>
