@@ -42,10 +42,10 @@ const SetPomodoro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (newTimer.work != 0) {
+    if ((newTimer.work != 0) && (color != "")) {
       updateExecute(newTimer, color);
     } else {
-      toast.info('Você precisa adicionar tempo para contagem!');
+      toast.info('Algum campo não foi preenchido 😞');
     }
   };
 
@@ -100,7 +100,7 @@ const SetPomodoro = () => {
 
               <div className="inputs-colors">
                 <label>
-                  <span>Cores</span>
+                  <span>Cores disponíveis</span>
                 </label>
                 <div className="list-colors">
                   <input

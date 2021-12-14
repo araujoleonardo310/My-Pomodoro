@@ -34,7 +34,7 @@ const Home = () => {
           <ul className="TimesOfPomodoro">
             <li>
               <Button
-                title="Preferência"
+                title="Pomodoro"
                 activeClass={
                   executing.active === 'work' ? 'btn-active-work' : undefined
                 }
@@ -60,11 +60,14 @@ const Home = () => {
               />
             </li>
           </ul>
+          <section>
           <Button
-            title="Settings"
+            title="Configurações"
             _callback={SettingsBtn}
             className="settings-btn"
           />
+          <LogOut />
+          </section>
           <div className="container__time">
             <div className="PomodoroStart">
               <CountdownAnimation
@@ -93,9 +96,7 @@ const Home = () => {
       ) : (
         <SetPomodoro />
       )}
-      <div>
-        <LogOut />
-      </div>
+      
     </div>
   );
 };
