@@ -42,7 +42,7 @@ const SetPomodoro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if ((newTimer.work != 0) && (color != "")) {
+    if (newTimer.work != 0 && color != '') {
       updateExecute(newTimer, color);
     } else {
       toast.info('Algum campo não foi preenchido 😞');
@@ -111,13 +111,13 @@ const SetPomodoro = () => {
                   />
                   <input
                     onClick={() => {
-                      cor('#eb34d8');
+                      cor('#7ef870');
                     }}
                     className="option2"
                   />
                   <input
                     onClick={() => {
-                      cor('#07f5d5');
+                      cor('#f870a4');
                     }}
                     className="option3"
                   />

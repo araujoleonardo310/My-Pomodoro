@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-import { logout } from '../../config/Firebase'
+import { logout } from '../../config/Firebase';
 
 const LogOut = () => {
   return (
     <>
-      <button onClick={logout} className='logout'>Sair</button>      
+      <button onClick={logout} className="logout">
+        Sair
+      </button>
     </>
-  )
-}
+  );
+};
 
-export default LogOut
+export default LogOut;

@@ -2,6 +2,7 @@
 import firebase from 'firebase';
 import { toast } from 'react-toastify';
 
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDJUc1FdEk92ZMiWzKEqVv0wWmgh4BZcO0',
   authDomain: 'my-pomodoro-bb435.firebaseapp.com',
@@ -84,6 +85,8 @@ const sendPasswordResetEmail = async (email) => {
 
 const logout = () => {
   auth.signOut();
+
+
 };
 
 export {

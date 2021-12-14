@@ -1,11 +1,12 @@
 import { useEffect, useContext } from 'react';
 import { SettingsContext } from '../../context';
 
-import './style.css';
 import Button from '../../components/Button';
 import SetPomodoro from '../../components/SetPomodoro';
 import CountdownAnimation from '../../components/CountdownAnimation';
 import LogOut from '../../components/LogOut';
+
+import './style.css';
 
 const Home = () => {
   const {
@@ -36,7 +37,7 @@ const Home = () => {
               <Button
                 title="Pomodoro"
                 activeClass={
-                  executing.active === 'work' ? 'btn-active-work' : undefined
+                  executing.active === 'work' ? 'btn-active' : undefined
                 }
                 _callback={() => setCurrentTimer('work')}
               />
@@ -45,7 +46,7 @@ const Home = () => {
               <Button
                 title="Pausa Curta"
                 activeClass={
-                  executing.active === 'short' ? 'btn-active-short' : undefined
+                  executing.active === 'short' ? 'btn-active' : undefined
                 }
                 _callback={() => setCurrentTimer('short')}
               />
@@ -54,19 +55,19 @@ const Home = () => {
               <Button
                 title="Pausa Longa"
                 activeClass={
-                  executing.active === 'long' ? 'btn-active-long' : undefined
+                  executing.active === 'long' ? 'btn-active' : undefined
                 }
                 _callback={() => setCurrentTimer('long')}
               />
             </li>
           </ul>
           <section>
-          <Button
-            title="Configurações"
-            _callback={SettingsBtn}
-            className="settings-btn"
-          />
-          <LogOut />
+            <Button
+              title="Configurações"
+              _callback={SettingsBtn}
+              className="settings-btn"
+            />
+            <LogOut />
           </section>
           <div className="container__time">
             <div className="PomodoroStart">
@@ -96,7 +97,6 @@ const Home = () => {
       ) : (
         <SetPomodoro />
       )}
-      
     </div>
   );
 };
