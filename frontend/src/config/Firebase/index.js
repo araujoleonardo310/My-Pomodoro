@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import firebase from 'firebase';
 import { toast } from 'react-toastify';
+import {useHistoy} from 'react-router-dom'
 
 
 const firebaseConfig = {
@@ -85,8 +86,6 @@ const sendPasswordResetEmail = async (email) => {
 
 const logout = () => {
   auth.signOut();
-
-
 };
 
 export {

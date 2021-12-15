@@ -22,8 +22,7 @@ import './style.css';
 
 const Login = () => {
   const [GoogleIcon] = useState(FcGoogle);
-  const [GithubIcon] = useState(BsGithub);
-  const [FaceBookIcon] = useState(FaFacebookSquare);
+
   const [ClockIcon] = useState(MdOutlineMoreTime);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -35,20 +34,19 @@ const Login = () => {
       return;
     }
     if (user) history.replace('/home');
-    
   }, [user, loading]);
 
   return (
-    <div className="container-login">
-      <div className="containers">
-        <div className="container-form">
+    <div className="container__login">
+      <div className="section">
+        <div className="form__container">
           <div className="title">
             <sapn className="ClockIcon">{ClockIcon}</sapn>
             <p>Melhore sua produtividade</p>
           </div>
           <form className="form">
-            <section className="inputs-wrappers">
-              <div className="wrappers">
+            <div className="inputs">
+              <div className="typingData__container">
                 <input
                   type="email"
                   className="email"
@@ -72,31 +70,16 @@ const Login = () => {
                 <Link to="/register">Crie sua conta!</Link>
                 <Link to="/reset">Esqueceu a senha?</Link>
               </div>
-            </section>
-            <section className="btns-socials">
-              <button className="btn github">
-                <span className="icon">
-                  <span>{GithubIcon}</span>
-                  <span>GitHub</span>
-                </span>
-              </button>
-              <button className="btn facebook">
-                <span className="icon">
-                  <span>{FaceBookIcon}</span>
-                  <span>Facebook</span>
-                </span>
-              </button>
+            </div>
+            <div className="btns-socials">
               <button className="btn google" onClick={signInWithGoogle}>
-                <span className="icon">
-                  <span>{GoogleIcon}</span>
-                  <span>Google</span>
-                </span>
+                <span className="google">{GoogleIcon} Google</span>
               </button>
-            </section>
+            </div>
           </form>
         </div>
       </div>
-      <div className="containers lottieAnimation">
+      <div className="section lottieAnimation">
         <AnimationLottie name="workTime" />
       </div>
       <AlertsToast />

@@ -13,15 +13,11 @@ import AnimationLottie from '../../components/LottieFile';
 
 import { toast } from 'react-toastify';
 
-import { BsGithub } from 'react-icons/bs';
-import { FaFacebookSquare } from 'react-icons/fa';
 import { MdOutlineMoreTime } from 'react-icons/md';
 import { FcGoogle } from 'react-icons/fc';
 
 const Register = () => {
   const [GoogleIcon] = useState(FcGoogle);
-  const [GithubIcon] = useState(BsGithub);
-  const [FaceBookIcon] = useState(FaFacebookSquare);
   const [ClockIcon] = useState(MdOutlineMoreTime);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -78,18 +74,6 @@ const Register = () => {
               </div>
             </section>
             <section className="btns-socials">
-              <button className="btn github">
-                <span className="icon">
-                  <span>{GithubIcon}</span>
-                  <span>GitHub</span>
-                </span>
-              </button>
-              <button className="btn facebook">
-                <span className="icon">
-                  <span>{FaceBookIcon}</span>
-                  <span>Facebook</span>
-                </span>
-              </button>
               <button className="btn google" onClick={signInWithGoogle}>
                 <span className="icon">
                   <span>{GoogleIcon}</span>
