@@ -25,16 +25,16 @@ const Reset = () => {
   }, [user, loading]);
 
   return (
-    <div className="container-login">
-      <div className="containers">
-        <div className="container-form">
+    <div className="container__reset">
+      <div className="section">
+        <div className="form__container">
           <div className="title">
             <sapn className="ClockIcon">{ClockIcon}</sapn>
             <p>Melhore sua produtividade</p>
           </div>
           <form className="form">
-            <section className="inputs-wrappers">
-              <div className="wrappers">
+            <div className="inputs">
+              <div className="typingData__container">
                 <input
                   type="email"
                   className="email"
@@ -50,14 +50,14 @@ const Reset = () => {
                 </button>
               </div>
               <div className="RegistrationAndGetpassword">
-                <a>Altere sua senha</a>
+                <Link to="/">Entrar na minha conta!</Link>
                 <Link to="/register">Crie sua conta!</Link>
               </div>
-            </section>
+            </div>
           </form>
         </div>
       </div>
-      <div className="containers lottieAnimation">
+      <div className="section lottieAnimation">
         <AnimationLottie name="workTime" />
       </div>
     </div>
