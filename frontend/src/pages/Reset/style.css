@@ -1,6 +1,6 @@
 .container__reset {
-  width: 100vw;
-  height: 100vh;
+  width: var(--container-vw);
+  height: var(--container-vh);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,8 +9,8 @@
 
 .lottieAnimation {
   background: var(--color-primary);
-  width: 100vw;
-  height: 100vh;
+  width: var(--container-vw);
+  height: var(--container-vh);
   display: flex;
   justify-content: center;
 }
@@ -26,7 +26,7 @@
   margin-left: 0.5em;
   font-size: 1.6em;
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--fontSize);
   color: #263238;
 }
 
@@ -43,7 +43,7 @@
   height: 5vh;
   margin: 0.2rem 0;
   letter-spacing: 0.2rem;
-  font-weight: 500;
+  font-weight: var(--fontSize);
   text-align: center;
   color: #455a64;
 }
@@ -65,7 +65,7 @@ input:focus {
   height: 60vh;
   margin-right: 5em;
   margin-left: 5em;
-  padding: 2em;
+  padding: var(--paddingItens);
   border: none;
   border-radius: 10px;
   background: #fafafa;
@@ -88,6 +88,3 @@ input:focus {
 .typingData__container input {
   width: 30vw;
 }
-
-
-

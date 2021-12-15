@@ -1,6 +1,6 @@
 .container__login {
-  width: 100vw;
-  height: 100vh;
+  width: var(--container-vw);
+  height: var(--container-vh);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,8 +9,8 @@
 
 .lottieAnimation {
   background: var(--color-primary);
-  width: 100vw;
-  height: 100vh;
+  width: var(--container-vw);
+  height: var(--container-vh);
   display: flex;
   justify-content: center;
 }
@@ -26,7 +26,7 @@
   margin-left: 0.5em;
   font-size: 1.6em;
   font-style: italic;
-  font-weight: 500;
+  font-weight: var(--fontSize);
   color: #263238;
 }
 
@@ -44,7 +44,7 @@
   height: 5vh;
   margin: 0.2rem 0;
   letter-spacing: 0.2rem;
-  font-weight: 500;
+  font-weight: var(--fontSize);
   text-align: center;
   color: #455a64;
 }
@@ -56,7 +56,7 @@ input:focus {
 }
 
 .RegistrationAndGetpassword {
-  width: 100%;
+  width: var(--container-vw);
   display: flex;
   justify-content: space-around;
 }
@@ -66,7 +66,7 @@ input:focus {
   height: 60vh;
   margin-right: 5em;
   margin-left: 5em;
-  padding: 2em;
+  padding: var(--paddingItens);
   border: none;
   border-radius: 10px;
   background: #fafafa;
@@ -74,7 +74,7 @@ input:focus {
 }
 
 .form__container .form {
-  padding: 2em 3em;
+  padding: var(--paddingItens) 3em;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -90,14 +90,20 @@ input:focus {
   width: 30vw;
 }
 
-.login {
+.typingData__container .btn {
   color: var(--color-primary);
   background: #17d350;
 }
 
+.typingData__container .btn:hover {
+  background: #17d34f79;
+  color: rgb(147 84 84 / 75%);
+  font-weight: 600;
+}
+
 .btns-socials {
-  width: 100%;
-  margin-top: 2rem;
+  width: var(--container-vw);
+  margin-top: var(--marginItens);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,15 +119,10 @@ input:focus {
 .btns-socials .btn {
   background: #faebeb;
   color: #0f1113;
-  font-weight: 500;
+  font-weight: var(--fontSize);
 }
 
 .btns-socials .btn:hover {
   background: #b3b3b359;
   color: #6d6d6dd6;
 }
-
-
-
-
-

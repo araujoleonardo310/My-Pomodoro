@@ -5,6 +5,11 @@
 }
 
 :root {
+  --container-vw: 100vw;
+  --container-vh: 100vh;
+  --marginItens: 2em;
+  --paddingItens: 2em;
+  --fontSize: 500;
   --background: #0c0e1b;
   --background-dark: #151932;
   --color-primary: #fff;

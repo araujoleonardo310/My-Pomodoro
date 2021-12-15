@@ -41,7 +41,7 @@ const Register = () => {
         <div className="form__container">
           <div className="title">
             <sapn className="ClockIcon">{ClockIcon}</sapn>
-            <p>Crie sua conta</p>
+            <p>Crie conta</p>
           </div>
           <form className="form">
             <div className="inputs">
