@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Modal } from 'react-bootstrap';
+
 import { SettingsContext } from '../../context';
 import { ToastContainer, toast } from 'react-toastify';
 

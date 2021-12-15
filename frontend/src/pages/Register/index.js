@@ -1,20 +1,20 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useHistory } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
 import {
   auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from '../../config/Firebase';
-import './style.css';
-
-import AnimationLottie from '../../components/LottieFile';
-
 import { toast } from 'react-toastify';
 
-import { MdOutlineMoreTime } from 'react-icons/md';
 import { FcGoogle } from 'react-icons/fc';
+import { MdOutlineMoreTime } from 'react-icons/md';
+import AnimationLottie from '../../components/LottieFile';
+
+import './style.css';
 
 const Register = () => {
   const [GoogleIcon] = useState(FcGoogle);

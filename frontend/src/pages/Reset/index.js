@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useHistory } from 'react-router-dom';
-
-import { auth, sendPasswordResetEmail } from '../../config/Firebase';
-import './style.css';
-
-import AnimationLottie from '../../components/LottieFile';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { MdOutlineMoreTime } from 'react-icons/md';
+import AnimationLottie from '../../components/LottieFile';
+
+import { auth, sendPasswordResetEmail } from '../../config/Firebase';
+
+import './style.css';
 
 const Reset = () => {
   const [ClockIcon] = useState(MdOutlineMoreTime);

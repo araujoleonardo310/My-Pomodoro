@@ -2,9 +2,9 @@ import { useEffect, useContext } from 'react';
 import { SettingsContext } from '../../context';
 
 import Button from '../../components/Button';
+import LogOut from '../../components/LogOut';
 import SetPomodoro from '../../components/SetPomodoro';
 import CountdownAnimation from '../../components/CountdownAnimation';
-import LogOut from '../../components/LogOut';
 
 import './style.css';
 

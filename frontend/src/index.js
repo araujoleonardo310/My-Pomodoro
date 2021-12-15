@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style/global.css';
 import App from './app';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import SettingsContextProvider from './context';
 
-import 'react-toastify/dist/ReactToastify.css';
+import './style/global.css';
 
 ReactDOM.render(
   <SettingsContextProvider>

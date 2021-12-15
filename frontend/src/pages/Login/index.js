@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 
 import { Link, useHistory } from 'react-router-dom';
@@ -10,13 +9,11 @@ import {
   signInWithGoogle,
 } from '../../config/Firebase';
 
-import AnimationLottie from '../../components/LottieFile';
 
-import { BsGithub } from 'react-icons/bs';
-import { FaFacebookSquare } from 'react-icons/fa';
-import { MdOutlineMoreTime } from 'react-icons/md';
 import { FcGoogle } from 'react-icons/fc';
+import { MdOutlineMoreTime } from 'react-icons/md';
 import AlertsToast from '../../components/AlertsToast';
+import AnimationLottie from '../../components/LottieFile';
 
 import './style.css';
 
