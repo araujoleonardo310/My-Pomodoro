@@ -24,13 +24,5 @@
     "import/prefer-default-export": "off",
     "no-param-reassign": "off",
     "no-console": ["error", { "allow": ["tron"] }]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    },
-    "lint-staged": {
-      "*.js": "prettier --write"
-    }
   }
 }
