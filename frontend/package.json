@@ -56,7 +56,7 @@
       "pre-commit": "list-staged"
     }
   },
-  "list-staged": {
+  "lint-staged": {
     "*.js": "prettier --write"
   }
 }
