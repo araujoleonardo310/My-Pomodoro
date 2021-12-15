@@ -25,9 +25,17 @@ const Register = () => {
   const [user, loading] = useAuthState(auth);
   const history = useHistory();
 
-  const register = () => {
-    if (!name) toast.error('Precisa digitar seu nome no formulário 👀✍️');
-    registerWithEmailAndPassword(name, email, password);
+  const registration = (event) => {
+    /* event.preventDefault();
+
+    if (!name) {
+      toast.error('Precisa digitar seu nome no formulário 👀✍️');
+    } else {
+      registerWithEmailAndPassword(name, email, password);
+      toast.success('Registro criado!!! 😍🎊');
+    } */
+
+    console.log("Ola!!")
   };
 
   useEffect(() => {
@@ -64,7 +72,7 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Crie uma senha"
                 />
-                <button className="btn login" onClick={register}>
+                <button className="btn login" onClick={() => registration}>
                   Registrar
                 </button>
               </div>
@@ -75,7 +83,7 @@ const Register = () => {
             </div>
             <div className="btns-socials">
               <button className="btn" onClick={signInWithGoogle}>
-                <span>{GoogleIcon} Google</span>
+                <pan>{GoogleIcon} Google</pan>
               </button>
             </div>
           </form>

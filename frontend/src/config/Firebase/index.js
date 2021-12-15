@@ -82,7 +82,7 @@ const sendPasswordResetEmail = async (email) => {
   }
 };
 
-const logout = () => {
+const LogOutPomodoro = () => {
   auth.signOut();
 };
 
@@ -93,5 +93,5 @@ export {
   signInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
-  logout,
+  LogOutPomodoro,
 };

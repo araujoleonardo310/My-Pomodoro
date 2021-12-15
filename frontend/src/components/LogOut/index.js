@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { logout } from '../../config/Firebase';
+import { LogOutPomodoro } from '../../config/Firebase';
 import { useHistory } from 'react-router-dom';
 
 const LogOut = () => {
   const history = useHistory();
   const LogOutSystem = () => {
-    logout;
+    LogOutPomodoro;
     history.replace('/');
   };
   return (
