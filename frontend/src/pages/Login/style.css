@@ -95,15 +95,6 @@ input:focus {
   background: #17d350;
 }
 
-.google {
-  color: var(--background-dark);
-  background: rgb(241, 241, 241);
-}
-
-.google:hover {
-  color: #665353;
-}
-
 .btns-socials {
   width: 100%;
   margin-top: 2rem;
@@ -116,4 +107,21 @@ input:focus {
   border: 1px solid #75737386;
   width: 23vw;
   border: 1px solid #858080;
+  background: #8f8d8d;
 }
+
+.btns-socials .btn {
+  background: #faebeb;
+  color: #0f1113;
+  font-weight: 500;
+}
+
+.btns-socials .btn:hover {
+  background: #b3b3b359;
+  color: #6d6d6dd6;
+}
+
+
+
+
+

@@ -72,8 +72,8 @@ const Login = () => {
               </div>
             </div>
             <div className="btns-socials">
-              <button className="btn google" onClick={signInWithGoogle}>
-                <span className="google">{GoogleIcon} Google</span>
+              <button className="btn" onClick={signInWithGoogle}>
+                <span>{GoogleIcon} Google</span>
               </button>
             </div>
           </form>
