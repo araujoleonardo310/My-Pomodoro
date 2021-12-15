@@ -15,8 +15,8 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
 const db = app.firestore();
-
 const googleProvider = new firebase.auth.GoogleAuthProvider();
+
 
 const signInWithGoogle = async (event) => {
   event.preventDefault();
@@ -43,6 +43,7 @@ const signInWithGoogle = async (event) => {
   }
 };
 
+
 const signInWithEmailAndPassword = async (email, password) => {
   try {
     await auth.signInWithEmailAndPassword(email, password);
@@ -53,21 +54,21 @@ const signInWithEmailAndPassword = async (email, password) => {
   }
 };
 
+
 const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await auth.createUserWithEmailAndPassword(
-      name,
       email,
       password,
     );
     const user = res.user;
-    await db.collection('users').add({
+    await db.collection("users").add({
       uid: user.uid,
       name,
-      authProvider: 'local',
+      authProvider: "local",
       email,
     });
-    toast.success('Parabéns, você foi registrado(a) com sucesso!!! 🎇😍');
+    toast.success(`Parabéns ${name}, você criou sua conta!!! 🎇😍`);
   } catch (err) {
     console.log(err);
   }
@@ -82,7 +83,7 @@ const sendPasswordResetEmail = async (email) => {
   }
 };
 
-const LogOutPomodoro = () => {
+const LogOut = () => {
   auth.signOut();
 };
 
@@ -93,5 +94,5 @@ export {
   signInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
-  LogOutPomodoro,
+  LogOut,
 };

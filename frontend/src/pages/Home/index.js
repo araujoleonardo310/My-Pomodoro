@@ -2,7 +2,7 @@ import { useEffect, useContext } from 'react';
 import { SettingsContext } from '../../context';
 
 import Button from '../../components/Button';
-import LogOut from '../../components/LogOut';
+import LogOutMyPomodoro from '../../components/LogOutMyPomodoro';
 import SetPomodoro from '../../components/SetPomodoro';
 import CountdownAnimation from '../../components/CountdownAnimation';
 
@@ -67,7 +67,7 @@ const Home = () => {
               _callback={SettingsBtn}
               className="settings-btn"
             />
-            <LogOut />
+            <LogOutMyPomodoro />
           </section>
           <div className="container__time">
             <div className="PomodoroStart">

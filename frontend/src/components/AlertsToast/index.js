@@ -15,6 +15,7 @@ const AlertsToast = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        className="TostAlert"
       />
     </>
   );

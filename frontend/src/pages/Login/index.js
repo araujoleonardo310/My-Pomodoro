@@ -45,12 +45,14 @@ const Login = () => {
             <div className="inputs">
               <div className="typingData__container">
                 <input
+                value={email}
                   type="email"
                   className="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="@email.com"
                 />
                 <input
+                value={password}
                   type="password"
                   className="password"
                   onChange={(e) => setPassword(e.target.value)}

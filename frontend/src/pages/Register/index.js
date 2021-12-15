@@ -15,6 +15,7 @@ import { MdOutlineMoreTime } from 'react-icons/md';
 import AnimationLottie from '../../components/LottieFile';
 
 import './style.css';
+import AlertsToast from '../../components/AlertsToast';
 
 const Register = () => {
   const [GoogleIcon] = useState(FcGoogle);
@@ -25,17 +26,14 @@ const Register = () => {
   const [user, loading] = useAuthState(auth);
   const history = useHistory();
 
-  const registration = (event) => {
-    /* event.preventDefault();
-
-    if (!name) {
-      toast.error('Precisa digitar seu nome no formulário 👀✍️');
-    } else {
-      registerWithEmailAndPassword(name, email, password);
+  const SendRegistration = (event) => {
+    event.preventDefault();
+    if (name != '' && email != '' && password != '') {
       toast.success('Registro criado!!! 😍🎊');
-    } */
-
-    console.log("Ola!!")
+      registerWithEmailAndPassword(name, email, password);
+    } else {
+      toast.error('Precisa preencher o formulário... 👀✍️');
+    }
   };
 
   useEffect(() => {
@@ -55,24 +53,27 @@ const Register = () => {
             <div className="inputs">
               <div className="typingData__container">
                 <input
+                  value={name}
                   type="text"
                   className="name"
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Digite seu nome"
                 />
                 <input
+                  value={email}
                   type="email"
                   className="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="@email.com"
                 />
                 <input
+                  value={password}
                   type="password"
                   className="password"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Crie uma senha"
                 />
-                <button className="btn login" onClick={() => registration}>
+                <button className="btn login" onClick={SendRegistration}>
                   Registrar
                 </button>
               </div>
@@ -92,6 +93,7 @@ const Register = () => {
       <div className="section lottieAnimation">
         <AnimationLottie name="workTime" />
       </div>
+      <AlertsToast />
     </div>
   );
 };

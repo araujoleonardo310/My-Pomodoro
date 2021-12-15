@@ -12,7 +12,7 @@ import './style.css';
 const Reset = () => {
   const [ClockIcon] = useState(MdOutlineMoreTime);
   const [email, setEmail] = useState('');
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const history = useHistory();
 
   useEffect(() => {
@@ -35,6 +35,7 @@ const Reset = () => {
             <div className="inputs">
               <div className="typingData__container">
                 <input
+                  value={email}
                   type="email"
                   className="email"
                   onChange={(e) => setEmail(e.target.value)}
