@@ -2,13 +2,7 @@ import { useContext } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { SettingsContext } from '../../context';
 
-const CountdownAnimation = ({
-  key = 1,
-  timer,
-  animate,
-  children,
-  color,
-}) => {
+const CountdownAnimation = ({ key = 1, timer, animate, children, color }) => {
   const { stopAnimate } = useContext(SettingsContext);
 
   return (

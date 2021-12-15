@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 import firebase from 'firebase';
 import { toast } from 'react-toastify';
-import {useHistoy} from 'react-router-dom'
-
+import { useHistoy } from 'react-router-dom';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDJUc1FdEk92ZMiWzKEqVv0wWmgh4BZcO0',
