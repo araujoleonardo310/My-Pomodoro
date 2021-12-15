@@ -22,7 +22,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const history = useHistory();
 
   const register = () => {
@@ -74,8 +74,8 @@ const Register = () => {
               </div>
             </div>
             <div className="btns-socials">
-              <button className="btn google" onClick={signInWithGoogle}>
-                <span className="google">{GoogleIcon} Google</span>
+              <button className="btn" onClick={signInWithGoogle}>
+                <span>{GoogleIcon} Google</span>
               </button>
             </div>
           </form>

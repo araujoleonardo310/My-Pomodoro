@@ -1,51 +1,64 @@
 .container__reset {
   width: var(--container-vw);
   height: var(--container-vh);
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   background: var(--background-dark);
 }
 
 .lottieAnimation {
-  background: var(--color-primary);
   width: var(--container-vw);
   height: var(--container-vh);
+
   display: flex;
   justify-content: center;
+
+  background: var(--color-primary);
 }
 
 .title {
   width: 32rem;
+
   display: flex;
   margin-left: 2em;
+
   border-bottom: 1px solid #c5c5c5;
 }
 
 .title p {
   margin-left: 0.5em;
+
   font-size: 1.6em;
   font-style: italic;
   font-weight: var(--fontSize);
+
   color: #263238;
 }
 
 .ClockIcon {
-  font-size: 2rem;
-  color: #3fa92b;
-  position: relative;
   bottom: 15px;
+  position: relative;
+
+  font-size: 2rem;
+
+  color: #3fa92b;
 }
 
 .password {
-  border: 1px solid #d9d9d9;
-  border-radius: 0.2rem;
   height: 5vh;
   margin: 0.2rem 0;
+
+  border-radius: 0.2rem;
   letter-spacing: 0.2rem;
-  font-weight: var(--fontSize);
+
   text-align: center;
+  font-weight: var(--fontSize);
+
   color: #455a64;
+  border: 1px solid #d9d9d9;
 }
 
 input:focus {
@@ -63,26 +76,31 @@ input:focus {
 .form__container {
   width: 40vw;
   height: 60vh;
-  margin-right: 5em;
+
   margin-left: 5em;
+  margin-right: 5em;
+
   padding: var(--paddingItens);
+
   border: none;
   border-radius: 10px;
+
   background: #fafafa;
   box-shadow: rgba(255, 253, 253, 0.35) 0px 5px 15px;
 }
 
 .form__container .form {
   padding: 2em 3em;
-  text-align: center;
+
   display: flex;
+  text-align: center;
   flex-direction: column;
 }
 
 .typingData__container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 
 .typingData__container input {

@@ -7,16 +7,20 @@
 :root {
   --container-vw: 100vw;
   --container-vh: 100vh;
+
   --marginItens: 2em;
   --paddingItens: 2em;
+
   --fontSize: 500;
-  --background: #0c0e1b;
-  --background-dark: #151932;
-  --color-primary: #fff;
+
   --color-font: #d7e0fe;
   --color-one: #f87170;
   --color-two: #7ef870;
   --color-three: #f870a4;
+  --color-primary: #fff;
+
+  --background: #0c0e1b;
+  --background-dark: #151932;
 }
 
 body {

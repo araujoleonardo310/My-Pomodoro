@@ -1,10 +1,11 @@
 .container__login {
   width: var(--container-vw);
   height: var(--container-vh);
-  
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   background: var(--background-dark);
 }
 
@@ -18,35 +19,44 @@
 
 .title {
   width: 32rem;
+
   display: flex;
+
   margin-left: 2em;
+
   border-bottom: 1px solid #c5c5c5;
 }
 
 .title p {
   margin-left: 0.5em;
+
   font-size: 1.6em;
   font-style: italic;
   font-weight: var(--fontSize);
+
   color: #263238;
 }
 
 .ClockIcon {
+  bottom: 15px;
+  position: relative;
+
   font-size: 2rem;
   color: #3fa92b;
-  position: relative;
-  bottom: 15px;
 }
 
 .email,
 .password {
-  border: 1px solid #d9d9d9;
-  border-radius: 0.2rem;
   height: 5vh;
   margin: 0.2rem 0;
+
+  text-align: center;
   letter-spacing: 0.2rem;
   font-weight: var(--fontSize);
-  text-align: center;
+
+  border-radius: 0.2rem;
+  border: 1px solid #d9d9d9;
+
   color: #455a64;
 }
 
@@ -57,28 +67,33 @@ input:focus {
 }
 
 .RegistrationAndGetpassword {
-  width: var(--container-vw);
   display: flex;
+  width: var(--container-vw);
   justify-content: space-around;
 }
 
 .form__container {
   width: 40vw;
   height: 60vh;
-  margin-right: 5em;
+
   margin-left: 5em;
-  padding: var(--paddingItens);
+  margin-right: 5em;
+
   border: none;
   border-radius: 10px;
+
   background: #fafafa;
+
+  padding: var(--paddingItens);
   box-shadow: rgba(255, 253, 253, 0.35) 0px 5px 15px;
 }
 
 .form__container .form {
-  padding: var(--paddingItens) 3em;
-  text-align: center;
   display: flex;
+  text-align: center;
   flex-direction: column;
+
+  padding: var(--paddingItens) 3em;
 }
 
 .typingData__container {
@@ -103,23 +118,26 @@ input:focus {
 }
 
 .btns-socials {
-  width: var(--container-vw);
-  margin-top: var(--marginItens);
+  width: 100%;
+
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+
+  margin-top: var(--marginItens);
 }
 
 .btn {
-  border: 1px solid #75737386;
   width: 23vw;
+
   border: 1px solid #858080;
   background: #8f8d8d;
 }
 
 .btns-socials .btn {
-  background: #faebeb;
   color: #0f1113;
+  background: #faebeb;
+
   font-weight: var(--fontSize);
 }
 

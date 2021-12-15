@@ -75,7 +75,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
 
 const sendPasswordResetEmail = async (email) => {
   try {
-    await auth.sendPasswordResetEmail;
+    await auth.sendPasswordResetEmail(email);
     toast.info('Link enviado para seu email 📧💻');
   } catch (err) {
     toast.error('Email incorreto ou não está cadastrado em nosso sistema ⚠️😓');
