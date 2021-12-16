@@ -1,13 +1,12 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { auth, signInWithGoogle } from '../../config/Firebase';
+import { toast, ToastContainer } from 'react-toastify';
+import { auth, signInWithGoogle } from '../../config';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { toast } from 'react-toastify';
 
 import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineMoreTime } from 'react-icons/md';
-import AlertsToast from '../../components/AlertsToast';
 import AnimationLottie from '../../components/LottieFile';
 
 import './style.css';
@@ -22,10 +21,11 @@ const Login = () => {
   const history = useHistory();
 
   // Fazer login
+
   const signIn = async (email, password) => {
     try {
-      toast.success('Bem-vindo(a) 💓⏰');
       await auth.signInWithEmailAndPassword(email, password);
+      toast.success('Bem-vindo(a) 💓⏰');
     } catch (error) {
       toast.error('Algo está icorreto...👀');
       console.log(error);
@@ -40,12 +40,23 @@ const Login = () => {
       return;
     }
     if (user) {
-      history.replace('/home');
+      return history.replace('/home');
     }
   }, [user, loading]);
 
   return (
     <div className="container__login">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="section">
         <div className="form__container">
           <div className="title">
@@ -59,6 +70,7 @@ const Login = () => {
                   value={email}
                   type="email"
                   className="email"
+                  autoComplete="username"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="@email.com"
                 />
@@ -80,7 +92,7 @@ const Login = () => {
               </div>
             </div>
             <div className="btns-socials">
-              <button className="btn" onClick={signInWithGoogle}>
+              <button type="submit" className="btn" onClick={signInWithGoogle}>
                 <span>{GoogleIcon} Google</span>
               </button>
             </div>
@@ -90,7 +102,6 @@ const Login = () => {
       <div className="section lottieAnimation">
         <AnimationLottie name="workTime" />
       </div>
-      <AlertsToast />
     </div>
   );
 };

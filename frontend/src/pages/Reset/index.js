@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { auth, sendPasswordResetEmail } from '../../config/Firebase';
+import { auth } from '../../config';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
 import { MdOutlineMoreTime } from 'react-icons/md';
 import AnimationLottie from '../../components/LottieFile';
 
 import './style.css';
-import AlertsToast from '../../components/AlertsToast';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Reset = () => {
   const [ClockIcon] = useState(MdOutlineMoreTime);
   const [email, setEmail] = useState('');
   const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
+
+  // Pedindo link para criar nova senha
+  const sendPasswordResetEmail = async (email, event) => {
+    event.preventDefault();
+    try {
+      await auth.sendPasswordResetEmail(email);
+      toast.info('Link enviado para seu email 📧💻');
+    } catch (error) {
+      toast.error(
+        'Email incorreto ou não está cadastrado em nosso sistema ⚠️😓',
+      );
+    }
+  };
 
   useEffect(() => {
     if (loading) return;
@@ -23,6 +35,17 @@ const Reset = () => {
 
   return (
     <div className="container__reset">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="section">
         <div className="form__container">
           <div className="title">
@@ -58,7 +81,6 @@ const Reset = () => {
       <div className="section lottieAnimation">
         <AnimationLottie name="workTime" />
       </div>
-      <AlertsToast />
     </div>
   );
 };

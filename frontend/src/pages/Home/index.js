@@ -3,14 +3,19 @@ import { SettingsContext } from '../../context';
 import { useHistory } from 'react-router-dom';
 
 import Button from '../../components/Button';
-import { auth, logOut } from '../../config/Firebase';
+import { auth, logOut } from '../../config';
 import SetPomodoro from '../../components/SetPomodoro';
 import CountdownAnimation from '../../components/CountdownAnimation';
 
 import './style.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Home = () => {
+  const handleOutClick = () => {
+    toast.info('Você se desconectou 🤙📴');
+    logOut;
+  };
   const history = useHistory();
   const [user, loading] = useAuthState(auth);
   const {
@@ -38,6 +43,17 @@ const Home = () => {
 
   return (
     <div className="container__home">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <h1>My Pomodoro</h1>
       <small>Sendo produtivo na contagem certa!⏱️</small>
       {pomodoro !== 0 ? (
@@ -77,7 +93,7 @@ const Home = () => {
               _callback={SettingsBtn}
               className="settings-btn"
             />
-            <button className="settings-btn" onClick={logOut}>
+            <button className="settings-btn" onClick={handleOutClick}>
               Sair
             </button>
           </section>

@@ -1,21 +1,22 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
-
 import {
   auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
-} from '../../config/Firebase';
-import { toast } from 'react-toastify';
+} from '../../config';
+
+import { Link, useHistory } from 'react-router-dom';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+import { toast, ToastContainer } from 'react-toastify';
 
 import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineMoreTime } from 'react-icons/md';
 import AnimationLottie from '../../components/LottieFile';
 
 import './style.css';
-import AlertsToast from '../../components/AlertsToast';
 
 const Register = () => {
   const [GoogleIcon] = useState(FcGoogle);
@@ -47,6 +48,17 @@ const Register = () => {
 
   return (
     <div className="container__register">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="section">
         <div className="form__container">
           <div className="title">
@@ -99,7 +111,6 @@ const Register = () => {
       <div className="section lottieAnimation">
         <AnimationLottie name="workTime" />
       </div>
-      <AlertsToast />
     </div>
   );
 };

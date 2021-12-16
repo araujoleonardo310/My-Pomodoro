@@ -40,6 +40,8 @@ const signInWithGoogle = async (event) => {
   }
 };
 
+
+
 // Cadastro no app com email e senha
 const registerWithEmailAndPassword = async (userName, email, password) => {
   try {
@@ -47,7 +49,7 @@ const registerWithEmailAndPassword = async (userName, email, password) => {
     const user = res.user;
     await db.collection('users').add({
       uid: user.uid,
-      name,
+      userName,
       authProvider: 'local',
       email,
     });
@@ -58,17 +60,6 @@ const registerWithEmailAndPassword = async (userName, email, password) => {
 };
 
 
-// Pedindo link para criar nova senha
-const sendPasswordResetEmail = async (email, event) => {
-  event.preventDefault();
-  try {
-    await auth.sendPasswordResetEmail(email);
-    toast.info('Link enviado para seu email 📧💻');
-  } catch (error) {
-    toast.error('Email incorreto ou não está cadastrado em nosso sistema ⚠️😓');
-  }
-};
-
 // Desconectando
 const logOut = () => {
   auth.signOut();
@@ -78,8 +69,6 @@ export {
   auth,
   db,
   signInWithGoogle,
-
   registerWithEmailAndPassword,
-  sendPasswordResetEmail,
   logOut,
 };
