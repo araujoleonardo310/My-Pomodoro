@@ -26,7 +26,7 @@ const Reset = () => {
       <div className="section">
         <div className="form__container">
           <div className="title">
-            <sapn className="ClockIcon">{ClockIcon}</sapn>
+            <span className="ClockIcon">{ClockIcon}</span>
             <p>Recupere sua conta</p>
           </div>
           <form className="form">

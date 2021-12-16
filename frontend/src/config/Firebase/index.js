@@ -41,7 +41,7 @@ const signInWithGoogle = async (event) => {
 };
 
 // Cadastro no app com email e senha
-const registerWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (userName, email, password) => {
   try {
     const res = await auth.createUserWithEmailAndPassword(email, password);
     const user = res.user;
@@ -56,20 +56,11 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     console.log(error);
   }
 };
-// Fazer login
-const signIn = async (email, password) => {
-  try {
-    await auth.signInWithEmailAndPassword(email, password);
-    toast.success('Bem-vindo(a) 💓⏰');
-  } catch (error) {
-    toast.error('Algo está icorreto...👀');
-    console.log(error);
-  }
-};
+
 
 // Pedindo link para criar nova senha
 const sendPasswordResetEmail = async (email, event) => {
-  event.preventDefault()
+  event.preventDefault();
   try {
     await auth.sendPasswordResetEmail(email);
     toast.info('Link enviado para seu email 📧💻');
@@ -87,7 +78,7 @@ export {
   auth,
   db,
   signInWithGoogle,
-  signIn,
+
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
   logOut,

@@ -22,15 +22,15 @@ const Register = () => {
   const [ClockIcon] = useState(MdOutlineMoreTime);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [userName, setUserName] = useState('');
   const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
 
   const SendRegistration = (event) => {
     event.preventDefault();
-    if (name != '' && email != '' && password != '') {
+    if (userName != '' && email != '' && password != '') {
       toast.success('Registro criado!!! 😍🎊');
-      registerWithEmailAndPassword(name, email, password);
+      registerWithEmailAndPassword(userName, email, password);
     } else {
       toast.error('Precisa preencher o formulário... 👀✍️');
     }
@@ -50,17 +50,18 @@ const Register = () => {
       <div className="section">
         <div className="form__container">
           <div className="title">
-            <sapn className="ClockIcon">{ClockIcon}</sapn>
+            <span className="ClockIcon">{ClockIcon}</span>
             <p>Crie conta</p>
           </div>
           <form className="form">
             <div className="inputs">
               <div className="typingData__container">
                 <input
-                  value={name}
+                  value={user}
+                  autoComplete="username"
                   type="text"
                   className="name"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => setUserName(e.target.value)}
                   placeholder="Digite seu nome"
                 />
                 <input
@@ -71,6 +72,7 @@ const Register = () => {
                   placeholder="@email.com"
                 />
                 <input
+                  autoComplete="current-password"
                   value={password}
                   type="password"
                   className="password"

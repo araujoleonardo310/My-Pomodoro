@@ -1,15 +1,9 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
-
-
 import { Link, useHistory } from 'react-router-dom';
+import { auth, signInWithGoogle } from '../../config/Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
-import {
-  auth,
-  signIn,
-  signInWithGoogle,
-} from '../../config/Firebase';
+import { toast } from 'react-toastify';
 
 import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineMoreTime } from 'react-icons/md';
@@ -27,6 +21,20 @@ const Login = () => {
   const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
 
+  // Fazer login
+  const signIn = async (email, password) => {
+    try {
+      toast.success('Bem-vindo(a) 💓⏰');
+      await auth.signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      toast.error('Algo está icorreto...👀');
+      console.log(error);
+    }
+
+    console.log(email, password);
+    console.log(user);
+  };
+
   useEffect(() => {
     if (loading) {
       return;
@@ -41,7 +49,7 @@ const Login = () => {
       <div className="section">
         <div className="form__container">
           <div className="title">
-            <sapn className="ClockIcon">{ClockIcon}</sapn>
+            <span className="ClockIcon">{ClockIcon}</span>
             <p>Melhore sua produtividade</p>
           </div>
           <form className="form">
@@ -55,15 +63,14 @@ const Login = () => {
                   placeholder="@email.com"
                 />
                 <input
+                  autoComplete="current-password"
                   value={password}
                   type="password"
                   className="password"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Digite sua senha"
-                />                <button
-                  className="btn"
-                  onClick={() => signIn(email, password)}
-                >
+                />
+                <button className="btn" onClick={() => signIn(email, password)}>
                   Login
                 </button>
               </div>
