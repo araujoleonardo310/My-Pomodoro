@@ -24,7 +24,7 @@ const Login = () => {
   const [ClockIcon] = useState(MdOutlineMoreTime);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [user, loading] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
 
   useEffect(() => {

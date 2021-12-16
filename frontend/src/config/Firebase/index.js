@@ -35,8 +35,8 @@ const signInWithGoogle = async (event) => {
         email: user.email,
       });
     }
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
   }
 };
 
@@ -52,8 +52,8 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       email,
     });
     toast.success(`Parabéns ${name}, você criou sua conta!!! 🎇😍`);
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
   }
 };
 // Fazer login
@@ -61,18 +61,19 @@ const signIn = async (email, password) => {
   try {
     await auth.signInWithEmailAndPassword(email, password);
     toast.success('Bem-vindo(a) 💓⏰');
-  } catch (err) {
+  } catch (error) {
     toast.error('Algo está icorreto...👀');
-    console.log(err);
+    console.log(error);
   }
 };
 
 // Pedindo link para criar nova senha
-const sendPasswordResetEmail = async (email) => {
+const sendPasswordResetEmail = async (email, event) => {
+  event.preventDefault()
   try {
     await auth.sendPasswordResetEmail(email);
     toast.info('Link enviado para seu email 📧💻');
-  } catch (err) {
+  } catch (error) {
     toast.error('Email incorreto ou não está cadastrado em nosso sistema ⚠️😓');
   }
 };
