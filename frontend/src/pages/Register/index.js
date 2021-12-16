@@ -37,8 +37,12 @@ const Register = () => {
   };
 
   useEffect(() => {
-    if (loading) return;
-    if (user) history.replace('/');
+    if (loading) {
+      return;
+    }
+    if (user) {
+      history.replace('/home');
+    }
   }, [user, loading]);
 
   return (

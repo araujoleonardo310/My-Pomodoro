@@ -16,11 +16,9 @@ const Reset = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (loading) {
-      return;
-    }
+    if (loading) return;
 
-    if (user) history.replace('/');
+    if (user) history.replace('/home');
   }, [user, loading]);
 
   return (

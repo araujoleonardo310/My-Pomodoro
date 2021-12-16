@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import firebase from 'firebase';
 import { toast } from 'react-toastify';
-
 const firebaseConfig = {
   apiKey: 'AIzaSyDJUc1FdEk92ZMiWzKEqVv0wWmgh4BZcO0',
   authDomain: 'my-pomodoro-bb435.firebaseapp.com',
@@ -44,13 +43,14 @@ const signInWithGoogle = async (event) => {
 };
 
 
-const signInWithEmailAndPassword = async (email, password) => {
+const signInWithEmailAndPassword = async (email, password, event) => {
+  event.preventDefault()
   try {
-    await auth.signInWithEmailAndPassword(email, password);
     toast.success('Bem-vindo(a) 💓⏰');
+    await auth.signInWithEmailAndPassword(email, password);
   } catch (err) {
-    console.log(err);
     toast.error('Algo está icorreto...👀');
+    console.log(err);
   }
 };
 
@@ -83,7 +83,7 @@ const sendPasswordResetEmail = async (email) => {
   }
 };
 
-const LogOut = () => {
+const logOut = () => {
   auth.signOut();
 };
 
@@ -94,5 +94,5 @@ export {
   signInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
-  LogOut,
+  logOut,
 };

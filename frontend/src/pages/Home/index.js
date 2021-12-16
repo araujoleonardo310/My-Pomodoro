@@ -1,14 +1,18 @@
 import { useEffect, useContext } from 'react';
 import { SettingsContext } from '../../context';
+import { useHistory } from 'react-router-dom';
 
 import Button from '../../components/Button';
-import LogOutMyPomodoro from '../../components/LogOutMyPomodoro';
+import { auth, logOut } from '../../config/Firebase';
 import SetPomodoro from '../../components/SetPomodoro';
 import CountdownAnimation from '../../components/CountdownAnimation';
 
 import './style.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Home = () => {
+  const history = useHistory();
+  const [user, loading] = useAuthState(auth);
   const {
     color,
     pomodoro,
@@ -23,8 +27,14 @@ const Home = () => {
   } = useContext(SettingsContext);
 
   useEffect(() => {
+    if (loading) {
+      return;
+    }
+    if (!user) {
+      return history.replace('/');
+    }
     updateExecute(executing);
-  }, [executing, startAnimate, updateExecute]);
+  }, [executing, updateExecute, loading, user]);
 
   return (
     <div className="container__home">
@@ -67,7 +77,9 @@ const Home = () => {
               _callback={SettingsBtn}
               className="settings-btn"
             />
-            <LogOutMyPomodoro />
+            <button className="settings-btn" onClick={logOut}>
+              Sair
+            </button>
           </section>
           <div className="container__time">
             <div className="PomodoroStart">
