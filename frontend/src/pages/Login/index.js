@@ -1,11 +1,13 @@
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
+
 
 import { Link, useHistory } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import {
   auth,
-  signInWithEmailAndPassword,
+  signIn,
   signInWithGoogle,
 } from '../../config/Firebase';
 
@@ -58,10 +60,9 @@ const Login = () => {
                   className="password"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Digite sua senha"
-                />
-                <button
+                />                <button
                   className="btn"
-                  onClick={() => signInWithEmailAndPassword(email, password)}
+                  onClick={() => signIn(email, password)}
                 >
                   Login
                 </button>

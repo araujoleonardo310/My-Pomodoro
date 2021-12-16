@@ -16,14 +16,12 @@ const auth = app.auth();
 const db = app.firestore();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-
+// Autenticacão/Cadastro com Google
 const signInWithGoogle = async (event) => {
   event.preventDefault();
   try {
     const res = await auth.signInWithPopup(googleProvider);
-
     const user = res.user;
-
     const query = await db
       .collection('users')
       .where('uid', '==', user.uid)
@@ -42,30 +40,15 @@ const signInWithGoogle = async (event) => {
   }
 };
 
-
-const signInWithEmailAndPassword = async (email, password, event) => {
-  event.preventDefault()
-  try {
-    toast.success('Bem-vindo(a) 💓⏰');
-    await auth.signInWithEmailAndPassword(email, password);
-  } catch (err) {
-    toast.error('Algo está icorreto...👀');
-    console.log(err);
-  }
-};
-
-
+// Cadastro no app com email e senha
 const registerWithEmailAndPassword = async (name, email, password) => {
   try {
-    const res = await auth.createUserWithEmailAndPassword(
-      email,
-      password,
-    );
+    const res = await auth.createUserWithEmailAndPassword(email, password);
     const user = res.user;
-    await db.collection("users").add({
+    await db.collection('users').add({
       uid: user.uid,
       name,
-      authProvider: "local",
+      authProvider: 'local',
       email,
     });
     toast.success(`Parabéns ${name}, você criou sua conta!!! 🎇😍`);
@@ -73,7 +56,18 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     console.log(err);
   }
 };
+// Fazer login
+const signIn = async (email, password) => {
+  try {
+    await auth.signInWithEmailAndPassword(email, password);
+    toast.success('Bem-vindo(a) 💓⏰');
+  } catch (err) {
+    toast.error('Algo está icorreto...👀');
+    console.log(err);
+  }
+};
 
+// Pedindo link para criar nova senha
 const sendPasswordResetEmail = async (email) => {
   try {
     await auth.sendPasswordResetEmail(email);
@@ -83,6 +77,7 @@ const sendPasswordResetEmail = async (email) => {
   }
 };
 
+// Desconectando
 const logOut = () => {
   auth.signOut();
 };
@@ -91,7 +86,7 @@ export {
   auth,
   db,
   signInWithGoogle,
-  signInWithEmailAndPassword,
+  signIn,
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
   logOut,
