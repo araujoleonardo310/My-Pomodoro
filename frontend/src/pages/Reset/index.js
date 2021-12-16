@@ -6,8 +6,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { MdOutlineMoreTime } from 'react-icons/md';
 import AnimationLottie from '../../components/LottieFile';
 
-
 import './style.css';
+import AlertsToast from '../../components/AlertsToast';
 
 const Reset = () => {
   const [ClockIcon] = useState(MdOutlineMoreTime);
@@ -58,6 +58,7 @@ const Reset = () => {
       <div className="section lottieAnimation">
         <AnimationLottie name="workTime" />
       </div>
+      <AlertsToast />
     </div>
   );
 };
