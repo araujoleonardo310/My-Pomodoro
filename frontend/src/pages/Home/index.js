@@ -10,7 +10,7 @@ import CountdownAnimation from '../../components/CountdownAnimation';
 
 import './style.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 const Home = () => {
   const history = useHistory();

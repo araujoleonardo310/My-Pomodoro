@@ -66,6 +66,7 @@ const Login = () => {
                   placeholder="Digite sua senha"
                 />
                 <button
+                  type="button"
                   className="btn"
                   onClick={() => signInEmailAndPassword(email, password)}
                 >

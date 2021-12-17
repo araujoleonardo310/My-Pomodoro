@@ -44,11 +44,9 @@ const signInWithGoogle = async (event) => {
 
 const signInEmailAndPassword = async (email, password) => {
   try {
-    toast.success('Bem-vindo(a) 💓⏰');
     await auth.signInWithEmailAndPassword(email, password);
   } catch (error) {
-    toast.error('Algo está icorreto...👀');
-    console.log(error);
+    toast.error('Problemas ao fazer o login. Tente novamente 👀!');
   }
 };
 
@@ -65,7 +63,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     });
     toast.success(`Parabéns ${name}, você criou sua conta!!! 🎇😍`);
   } catch (error) {
-    toast.erro("Erro com a autenticação Google 😓");
+    toast.erro('Erro com a autenticação Google 😓');
     console.log(error);
   }
 };
