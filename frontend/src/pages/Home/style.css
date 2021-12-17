@@ -10,6 +10,11 @@
   background: radial-gradient(circle, #1e2140 0%, #151932 65%);
 }
 
+.Toastify__toast {
+  padding: 0.2em;
+  width: 22vw;
+}
+
 .container__home h1 {
   font-size: 2.6rem;
   margin-bottom: 0.2rem;

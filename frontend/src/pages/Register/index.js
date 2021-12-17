@@ -23,15 +23,15 @@ const Register = () => {
   const [ClockIcon] = useState(MdOutlineMoreTime);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userName, setUserName] = useState('');
+  const [name, setName] = useState('');
   const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
 
   const SendRegistration = (event) => {
     event.preventDefault();
-    if (userName != '' && email != '' && password != '') {
+    if (name != '' && email != '' && password != '') {
       toast.success('Registro criado!!! 😍🎊');
-      registerWithEmailAndPassword(userName, email, password);
+      registerWithEmailAndPassword(name, email, password);
     } else {
       toast.error('Precisa preencher o formulário... 👀✍️');
     }
@@ -50,7 +50,7 @@ const Register = () => {
     <div className="container__register">
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={10000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -69,15 +69,15 @@ const Register = () => {
             <div className="inputs">
               <div className="typingData__container">
                 <input
-                  value={user}
-                  autoComplete="username"
+                  value={name}
                   type="text"
                   className="name"
-                  onChange={(e) => setUserName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Digite seu nome"
                 />
                 <input
                   value={email}
+                  autoComplete="username"
                   type="email"
                   className="email"
                   onChange={(e) => setEmail(e.target.value)}
@@ -102,7 +102,7 @@ const Register = () => {
             </div>
             <div className="btns-socials">
               <button className="btn" onClick={signInWithGoogle}>
-                <pan>{GoogleIcon} Google</pan>
+                <span>{GoogleIcon} Google</span>
               </button>
             </div>
           </form>

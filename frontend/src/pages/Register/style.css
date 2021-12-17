@@ -9,6 +9,11 @@
   background: var(--background-dark);
 }
 
+.Toastify__toast {
+  padding: 0.2em;
+  width: 22vw;
+}
+
 .lottieAnimation {
   width: var(--container-vw);
   height: var(--container-vh);

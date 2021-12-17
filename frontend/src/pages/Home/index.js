@@ -4,7 +4,7 @@ import { SettingsContext } from '../../context';
 import { useHistory } from 'react-router-dom';
 
 import Button from '../../components/Button';
-import { auth, UserLogOut } from '../../config';
+import { auth, handleOutClick } from '../../config';
 import SetPomodoro from '../../components/SetPomodoro';
 import CountdownAnimation from '../../components/CountdownAnimation';
 
@@ -28,28 +28,23 @@ const Home = () => {
     SettingsBtn,
   } = useContext(SettingsContext);
 
-  const handleOutClick = () => {
-    UserLogOut;
-    toast.info('Você se desconectou 🤙📴');
-  };
-
   useEffect(() => {
     if (loading) {
       return;
     }
 
-    if (user) {
-      history.replace('/home');
+    if (!user) {
+      history.replace('/');
     }
 
     updateExecute(executing);
-  }, [executing, updateExecute, loading, !user]);
+  }, [executing, updateExecute, loading, user]);
 
   return (
     <div className="container__home">
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={10000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react';
-import { auth } from '../../config';
+import { useEffect, useState } from 'react';
+import { auth, sendPasswordResetEmail } from '../../config';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { MdOutlineMoreTime } from 'react-icons/md';
 import AnimationLottie from '../../components/LottieFile';
 
 import './style.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 const Reset = () => {
   const [ClockIcon] = useState(MdOutlineMoreTime);
@@ -15,32 +15,17 @@ const Reset = () => {
   const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
 
-  // Pedindo link para criar nova senha
-  const sendPasswordResetEmail = async (email, event) => {
-    event.preventDefault();
-    try {
-      await auth.sendPasswordResetEmail(email);
-      toast.info('Link enviado para seu email 📧💻');
-      console.log('Saiu');
-    } catch (error) {
-      toast.error(
-        'Email incorreto ou não está cadastrado em nosso sistema ⚠️😓',
-      );
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     if (loading) return;
 
-    if (user) history.replace('/');
+    if (user) history.replace('/home');
   }, [user, loading]);
 
   return (
     <div className="container__reset">
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={10000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

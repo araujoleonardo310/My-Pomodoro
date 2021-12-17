@@ -1,55 +1,37 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
+import { auth, signInWithGoogle, signInEmailAndPassword } from '../../config';
 import { Link, useHistory } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import { auth, signInWithGoogle } from '../../config';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { ToastContainer } from 'react-toastify';
 
 import { FcGoogle } from 'react-icons/fc';
 import { MdOutlineMoreTime } from 'react-icons/md';
 import AnimationLottie from '../../components/LottieFile';
-
 import './style.css';
 
 const Login = () => {
   const [GoogleIcon] = useState(FcGoogle);
-
   const [ClockIcon] = useState(MdOutlineMoreTime);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, loading, error] = useAuthState(auth);
   const history = useHistory();
 
-  // Fazer login
-
-  const signIn = async (email, password) => {
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      toast.success('Bem-vindo(a) 💓⏰');
-      console.log('ok');
-    } catch (error) {
-      toast.error('Algo está icorreto...👀');
-      console.log(error);
-    }
-  };
   useEffect(() => {
     if (loading) {
-      history.replace('/home');
-    }
-    if (user) {
-      return history.replace('/');
-    }
-
-    if (error) {
       return;
     }
-  }, [user, loading, error]);
+    if (user) {
+      return history.replace('/home');
+    }
+  }, [user, loading]);
 
   return (
     <div className="container__login">
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={10000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -83,7 +65,10 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Digite sua senha"
                 />
-                <button className="btn" onClick={() => signIn(email, password)}>
+                <button
+                  className="btn"
+                  onClick={() => signInEmailAndPassword(email, password)}
+                >
                   Login
                 </button>
               </div>
@@ -93,7 +78,7 @@ const Login = () => {
               </div>
             </div>
             <div className="btns-socials">
-              <button type="submit" className="btn" onClick={signInWithGoogle}>
+              <button className="btn" onClick={signInWithGoogle}>
                 <span>{GoogleIcon} Google</span>
               </button>
             </div>
