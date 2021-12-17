@@ -91,7 +91,7 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Crie uma senha"
                 />
-                <button className="btn login" onClick={SendRegistration}>
+                <button className="btn login" onClick={SendRegistration} type='button'>
                   Registrar
                 </button>
               </div>

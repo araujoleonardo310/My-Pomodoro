@@ -52,7 +52,7 @@ const Reset = () => {
                 />
 
                 <button
-                  className="btn login"
+                  className="btn login" type='button'
                   onClick={() => sendPasswordResetEmail(email)}
                 >
                   Enviar

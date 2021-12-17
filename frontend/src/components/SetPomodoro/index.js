@@ -43,10 +43,17 @@ const SetPomodoro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!newTimer.work) {
+      toast.info('Você precisa adicionar tempo ao Pomodoro! ⚠️');
+    }
+
+    if (!color) {
+      toast.info('Personalize seu Pomodoro com uma cor 🎨');
+    }
+
     if (newTimer.work != 0 && color != '') {
+      toast.success('Bem-Vindo(a),  ao My Pomorodo 😍⏱️');
       updateExecute(newTimer, color);
-    } else {
-      toast.info('Algum campo não foi preenchido 😞');
     }
   };
 
@@ -75,7 +82,7 @@ const SetPomodoro = () => {
                 </label>
 
                 <label>
-                  <span>Pausa Curta</span>
+                  <span>Descanso Curto</span>
                   <input
                     className="input"
                     type="number"
@@ -87,7 +94,7 @@ const SetPomodoro = () => {
                 </label>
 
                 <label>
-                  <span>Pausa Longa</span>
+                  <span>Descanso Longo</span>
                   <input
                     className="input"
                     type="number"
@@ -101,7 +108,7 @@ const SetPomodoro = () => {
 
               <div className="inputs-colors">
                 <label>
-                  <span>Cores disponíveis</span>
+                  <span>Escolha uma cor para seu Pomodoro ⏱️🎨</span>
                 </label>
                 <div className="list-colors">
                   <input
