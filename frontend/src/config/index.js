@@ -40,8 +40,6 @@ const signInWithGoogle = async (event) => {
   }
 };
 
-
-
 // Cadastro no app com email e senha
 const registerWithEmailAndPassword = async (userName, email, password) => {
   try {
@@ -59,16 +57,9 @@ const registerWithEmailAndPassword = async (userName, email, password) => {
   }
 };
 
-
 // Desconectando
-const logOut = () => {
+const UserLogOut = () => {
   auth.signOut();
 };
 
-export {
-  auth,
-  db,
-  signInWithGoogle,
-  registerWithEmailAndPassword,
-  logOut,
-};
+export { auth, db, signInWithGoogle, registerWithEmailAndPassword, UserLogOut };

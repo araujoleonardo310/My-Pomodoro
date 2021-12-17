@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 import { useEffect, useContext } from 'react';
 import { SettingsContext } from '../../context';
 import { useHistory } from 'react-router-dom';
 
 import Button from '../../components/Button';
-import { auth, logOut } from '../../config';
+import { auth, UserLogOut } from '../../config';
 import SetPomodoro from '../../components/SetPomodoro';
 import CountdownAnimation from '../../components/CountdownAnimation';
 
@@ -12,10 +13,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 
 const Home = () => {
-  const handleOutClick = () => {
-    toast.info('Você se desconectou 🤙📴');
-    logOut;
-  };
   const history = useHistory();
   const [user, loading] = useAuthState(auth);
   const {
@@ -31,15 +28,22 @@ const Home = () => {
     SettingsBtn,
   } = useContext(SettingsContext);
 
+  const handleOutClick = () => {
+    UserLogOut;
+    toast.info('Você se desconectou 🤙📴');
+  };
+
   useEffect(() => {
     if (loading) {
       return;
     }
-    if (!user) {
-      return history.replace('/');
+
+    if (user) {
+      history.replace('/home');
     }
+
     updateExecute(executing);
-  }, [executing, updateExecute, loading, user]);
+  }, [executing, updateExecute, loading, !user]);
 
   return (
     <div className="container__home">

@@ -26,23 +26,24 @@ const Login = () => {
     try {
       await auth.signInWithEmailAndPassword(email, password);
       toast.success('Bem-vindo(a) 💓⏰');
+      console.log('ok');
     } catch (error) {
       toast.error('Algo está icorreto...👀');
       console.log(error);
     }
-
-    console.log(email, password);
-    console.log(user);
   };
-
   useEffect(() => {
     if (loading) {
-      return;
+      history.replace('/home');
     }
     if (user) {
-      return history.replace('/home');
+      return history.replace('/');
     }
-  }, [user, loading]);
+
+    if (error) {
+      return;
+    }
+  }, [user, loading, error]);
 
   return (
     <div className="container__login">

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import { auth } from '../../config';
 import { Link, useHistory } from 'react-router-dom';
@@ -20,10 +21,12 @@ const Reset = () => {
     try {
       await auth.sendPasswordResetEmail(email);
       toast.info('Link enviado para seu email 📧💻');
+      console.log('Saiu');
     } catch (error) {
       toast.error(
         'Email incorreto ou não está cadastrado em nosso sistema ⚠️😓',
       );
+      console.log(error);
     }
   };
 
