@@ -19,7 +19,7 @@
 
 <h3 id="sobre">Sobre o projeto:</h3>
 
-<p>O projeto é um desafio “Pomodoro app”, do site voltado para praticar e elevar habilidades de programação e desenvolvimento, Frontend Mentor.</p>
+<p>O projeto é um desafio chamado de “Pomodoro app”, divulgado no site Frontend Mentor.</p>
 
 <br>
 
