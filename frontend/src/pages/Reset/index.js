@@ -38,7 +38,7 @@ const Reset = () => {
         <div className="form__container">
           <div className="title">
             <span className="ClockIcon">{ClockIcon}</span>
-            <p>Recupere sua conta</p>
+            <p>Recupere sua senha</p>
           </div>
           <form className="form">
             <div className="inputs">

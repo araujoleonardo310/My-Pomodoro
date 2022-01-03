@@ -1,46 +1,82 @@
 <h1>Projeto: My Pomoro ⏱️</h1>
 
 <div align=center>
-<em><strong>ÍNDICE</strong></em>
+    <em><strong>ÍNDICE</strong></em>
 </div>
 
 <br>
  
 <div align=center>
-    <a href="#objetivo" align=center>Objetivo</a>&nbsp;&nbsp;&nbsp;
-    <a href="#status" align=center>Status</a>&nbsp;&nbsp;&nbsp;
-    <a href="#veja" align=center>Veja o projeto</a>&nbsp;&nbsp;&nbsp; 
-    <a href="#instrucoes" align=center>Instruções de instalação</a>&nbsp;&nbsp;&nbsp;
-    <a href="#recursos" align=center>Linguagens & Ferramentas</a>&nbsp;&nbsp;&nbsp;
-    <a href="#referencias" align=center>Referências & Créditos</a>&nbsp;&nbsp;&nbsp;
-    <a href="#skills" align=center>Skills</a>&nbsp;&nbsp;&nbsp;
-    <a href="#autor" align=center>Autor</a> 
+    <a href="#sobre" align=center>Sobre o projeto</a>&nbsp;&nbsp;&nbsp;
+    <a href="#demostracao" align=center>Demostração do projeto</a>&nbsp;&nbsp;&nbsp; 
+    <a href="#instalacao" align=center>Instalação</a>&nbsp;&nbsp;&nbsp;
+    <a href="#linguagens" align=center>Linguagens & Frameworks</a>&nbsp;&nbsp;&nbsp;
+    <a href="#referencias" align=center>Referências & Links</a>&nbsp;&nbsp;&nbsp;
+    <a href="#biografia" align=center>Biografia</a> 
 </div>
 
 <br>
 
-<h3 id="objetivo">Objetivo: ...</h3>
+<h3 id="sobre">Sobre o projeto:</h3>
+
+<p>O projeto é um desafio “Pomodoro app”, do site voltado para praticar e elevar habilidades de programação e desenvolvimento, Frontend Mentor.</p>
+
+<br>
+
+<p>Este projeto refere-se a uma aplicação pomodoro, exclusiva para usuários cadastrados no banco de dados (Firebase).</p>
+
+<p>Esta aplicação permite que o usuário escolha contagens(pomodro em ação, pausa curta e longa), como também escolher três opções de cores para efeitos.</p>
+
+<h4>Skills obtidas com esse projeto</h4>
+
+<br>
+
+✔️ Desenvolvimento e conexão combanco de dados Firebase;
+
+✔️ Desenvolvimento de telas login, cadastro, troca de senha e home (app);
+
+✔️ Login por autenticação de conta Google, ou endereço eletrônico com senha;
+
+✔️ Notificações intuitivas;
+
+✔️ Criação de Components
+
+✔️ Manipulação de elementos root do React
+
+✔️ Variáveis para estilização
 
 <br>
 
 <h3 id="status">Status</h3><br>
 
-***Em desenvolvimento*** ⚙️🚧
+**_Concluído 🚀_**
 
 <br>
 
 <div align=center>
-    <h3 id="veja">Conheça o projeto 💖</h3>
+    <h3 id="demostracao">Demostração</h3>
     <br>
-    <img src="project-assets/my-project.png">
+    <h4>Login de usuário com email e senha<h4>
+    <img src="project-assets/login.png">
     <br><br>
+    <h4>Login conta Google<h4>
+    <img src="project-assets/google-aut.png">
+    <br><br>
+    <h4>Cadastro de usuário<h4>
+    <img src="project-assets/cadastro.png">
+    <br><br>
+     <h4>Recuperação de senha<h4>
+    <img src="project-assets/recuperacao-senha.png">
+    <br><br>
+    <h2> Aplicação Pomodoro </h2>
+    <h3> Home app </h3>
     <img src="project-assets/pomodoro.png">
+     <h4>Configurações E Estilos de Cores<h4>
+    <img src="project-assets/configuracoes.png">
+    <br><br>
 </div>
 
-<br>
-
-
-<h3 id="instrucoes">Instruções para rodar o projeto na sua máquina</h3>
+<h3 id="instalacao">Instalação</h3>
 
 <br>
 
@@ -48,7 +84,7 @@
 
 2 - Abra um terminal e acesse a pasta do projeto
 
-3 - Instale o package “node_module” com o comando ***npm install***
+3 - Instale o package “node_module” com o comando **_npm install_** ou **_yarn install_** (caso use yarn)
 
 <br>
 
@@ -56,7 +92,7 @@
 
 <br>
 
-4 - Depois de instalado o package, digite o comando npm start ou yarn start (caso tenha o yarn instalado)
+4 - Depois de instalado o package, digite o comando **_npm start_** ou **_yarn start_** (caso tenha o yarn instalado)
 
 <br>
 
@@ -64,58 +100,54 @@
 
 <br>
 
-5 - Em seu navegador de preferência, digite o endereço ***http://localhost:3000***
+5 - Em seu navegador de preferência, digite o endereço **_http://localhost:3000_**
 
 <br>
 
 <img src="project-assets/localhost.png">
 
+<br>
+
+<h3 id=linguagens>Linguagens & Frameworks</h3>
+
+* React 
+* Javascript
+* CSS
+* Html
+* Firebase
+
+
+> Dependências Instaladas 
+
+- react: ^17.0.2
+- react-bootstrap: ^2.0.3
+- firebase: ^8.10.0
+- react-firebase-hooks: ^3.0.4
+- react-countdown-circle-timer: ^2.5.
+- react-icons: ^4.3.1
+- react-lottie: ^1.2.3
+- react-router-dom: ^5.2.0
+- react-toastify: ^8.1.0
 
 <br>
 
-<h3 id="recursos">Linguagens / framewoks / Bibliotecas / Ferramentas utilizadas</h3>
 
-<br>
 
-* React.js
-* Node Sass
-* React Icons
-* React toast
-* React router
+<h3 align=center id="referencias"><i>Referências & Links </i>📖🙋‍♂️</h3><br>
 
-<br>
-
-<h2 id="skills">Skills obtidas com esse projeto</h2>
-
-<br>
-
-✔️ Noções de funcionamento e criação de um app com react
-
-✔️ Noções de componentes
-
-✔️ Manipulação de elementos root do React
-
-✔️ Noções de Sass
-
-✔️ Uso de variáveis para estilização de elementos 
-
-✔️ Noções de arrow functions 
-
-<br>
-
-<h3 align=center id="referencias"><i>Referências e Créditos </i>📖🙋‍♂️</h3><br> 
+Desafio Pomodoro App - [Frontend Mentor](https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G)
 
 Create a Pomodoro Clock in React with the Context API - [freeCodeCamp advanced JavaScript 2021](https://youtu.be/0PnSEPm2UKY) de **Siphiwo Julayi**
 
 <br>
 
-<h3 id="autor">Autor</h3><br>
+<h3 id="autor">Biografia</h3><br>
 
 <p> Meu nome é Leonardo, mas gosto de ser o Leo. Estou me graduando em Sistemas de Informação. Sou Desenvolvedor Front-End (estagiário) na AjaxTI.</p><br>
 
-<h3 align=center><i>Gostos e Hobbies </i>📖🙋‍♂️</h3><br> 
+<h3 align=center><i>Gostos e Hobbies </i>📖🙋‍♂️</h3><br>
 
-Caminhar, correr, ciclismo, exercícios físicos, estudar, ler e aprender sobre desenvolvendo de sites e aplicações.</p><br>
+Caminhar, correr, ciclismo, exercícios físicos, estudar, ler e aprender sobre desenvolvimento de sites e aplicações.</p><br>
 
 <div>
     <h3><strong>Contatos</strong></h3><hr><br>    
@@ -135,11 +167,3 @@ Caminhar, correr, ciclismo, exercícios físicos, estudar, ler e aprender sobre 
         <img src="https://i.imgur.com/HlqBmV8.png" height="30em" title="Ícone do LinkedIn">
     </a>
 </div>
-
-
-
-
-
-
-
-

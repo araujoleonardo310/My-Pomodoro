@@ -4,7 +4,7 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
 const CountdownAnimation = ({ timer, animate, children, color }) => {
   const { stopAnimate } = useContext(SettingsContext);
-
+  
   return (
     <CountdownCircleTimer
       key={0}

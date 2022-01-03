@@ -63,7 +63,7 @@ const Register = () => {
         <div className="form__container">
           <div className="title">
             <span className="ClockIcon">{ClockIcon}</span>
-            <p>Crie conta</p>
+            <p>Crie sua conta</p>
           </div>
           <form className="form">
             <div className="inputs">
@@ -91,7 +91,11 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Crie uma senha"
                 />
-                <button className="btn login" onClick={SendRegistration} type='button'>
+                <button
+                  className="btn login"
+                  onClick={SendRegistration}
+                  type="button"
+                >
                   Registrar
                 </button>
               </div>
