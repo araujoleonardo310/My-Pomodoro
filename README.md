@@ -143,7 +143,7 @@ Create a Pomodoro Clock in React with the Context API - [freeCodeCamp advanced J
 
 <h3 id="autor">Biografia</h3><br>
 
-<p> Meu nome é Leonardo, mas gosto de ser o Leo. Estou me graduando em Sistemas de Informação. Sou Desenvolvedor Front-End (estagiário) na AjaxTI.</p><br>
+<p> Meu nome é Leonardo, mas prefiro Leo. Estou graduando em Sistemas de Informação e estagiário de desenvolvimento Front-End.</p><br>
 
 <h3 align=center><i>Gostos e Hobbies </i>📖🙋‍♂️</h3><br>
 
